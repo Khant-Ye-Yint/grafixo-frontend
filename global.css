@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.navLink {
+	@apply cursor-pointer font-montserrat text-small text-white hover:text-gray-400;
+}
