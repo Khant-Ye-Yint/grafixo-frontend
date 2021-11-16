@@ -1,5 +1,8 @@
 import Image from 'next/image';
 
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+
 import Button from '../shared/Button';
 
 const Service = ({ reverse, bgColor, propImg }) => {
@@ -9,16 +12,27 @@ const Service = ({ reverse, bgColor, propImg }) => {
 			? '/images/laptop.png'
 			: 'camera' && '/images/camera.png';
 
+	const { ref, inView } = useInView();
+
+	const variants = {
+		view: { x: 0, opacity: 1 },
+		notInView: { x: -100, opacity: 0 },
+	};
+
 	return (
 		<div
+			ref={ref}
 			className={`h-section w-full px-contain ${bgGradi} bg-cover bg-no-repeat flex ${
 				reverse ? 'flex-row-reverse' : 'flex-row'
 			} justify-start items-center`}
 		>
-			<div
+			<motion.div
 				className={`flex flex-col ${
 					reverse ? 'items-end' : 'items-start'
 				} space-y-5 w-1/2`}
+				variants={variants}
+				animate={inView ? 'view' : 'notInView'}
+				transition={{ duration: 1, delay: 0.5 }}
 			>
 				<h1 className='text-larger text-primary font-bree'>
 					3D Modeling and Rendering
@@ -32,7 +46,7 @@ const Service = ({ reverse, bgColor, propImg }) => {
 					services for commercial and 3D printing.
 				</p>
 				<Button text='Learn more' />
-			</div>
+			</motion.div>
 			<div
 				className={`absolute h-section w-sectionImg ${
 					reverse ? 'left-0' : 'right-0'

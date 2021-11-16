@@ -1,12 +1,12 @@
-import Navbar from '../components/Navbar';
 import Hero from '../components/sections/Hero';
 import Greeding from '../components/sections/Greeding';
 import ServiceList from '../components/sections/ServiceList';
+import NavBar from '../components/Navbar';
 
 const Home = () => {
 	return (
 		<div className='bg-black bg-opacity-50'>
-			<Navbar />
+			<NavBar />
 			<Hero />
 			<Greeding />
 			<ServiceList />

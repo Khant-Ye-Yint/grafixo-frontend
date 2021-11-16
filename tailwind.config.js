@@ -53,6 +53,7 @@ module.exports = {
 			backgroundImage: {
 				blueGradi: 'url(/images/gradientBlue.png)',
 				redGradi: 'url(/images/gradientRed.png)',
+				heroBg: 'url(/images/tempBg.png)',
 			},
 			screens: {
 				tablet: '640px',
