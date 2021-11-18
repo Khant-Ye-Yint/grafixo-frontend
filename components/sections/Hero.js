@@ -12,8 +12,8 @@ const Hero = () => {
 					We Make 3D{' '}
 					<TextLoop
 						children={['Animation', '3D Modeling and Rendering']}
-						className='text-primary font-bold break-words'
-						springConfig={{ stiffness: 180, damping: 8 }}
+						className='text-primary font-bold break-words text-shadow'
+						springConfig={{ stiffness: 180 }}
 					/>
 				</h1>
 				<p className='text-gray-200 text-medium font-montserrat'>

@@ -47,7 +47,7 @@ module.exports = {
 				bigCard: '600px',
 			},
 			boxShadow: {
-				button: '8px 8px 24px rgba(55, 224, 154, 0.5);',
+				button: ' rgba(0, 0, 0, 0.35) 0px 5px 15px;',
 				none: 'none',
 			},
 			backgroundImage: {

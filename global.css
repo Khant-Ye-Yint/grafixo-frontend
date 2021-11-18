@@ -5,3 +5,7 @@
 .navLink {
 	@apply cursor-pointer font-montserrat text-small text-white hover:text-gray-400;
 }
+
+.text-shadow {
+	text-shadow: 0 6px 4px #000000, 0 -2px 1px rgb(233, 87, 87);
+}
