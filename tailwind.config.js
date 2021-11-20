@@ -6,14 +6,15 @@ module.exports = {
 		extend: {
 			fontFamily: {
 				montserrat: ['montserrat'],
-				bree: ['bree-serif'],
+				bree: ['Bree Serif'],
 			},
 			fontSize: {
-				larger: '4rem',
+				larger: '3rem',
 				large: '2.25rem',
-				normal: '2rem',
-				medium: '1.5rem',
-				small: '1.125rem',
+				medium: '1.25rem',
+				normal: '1rem',
+				testamonial: '0.85rem',
+				small: '0.75rem',
 			},
 			color: {
 				primary: '#EC6961',
@@ -26,13 +27,16 @@ module.exports = {
 			backgroundColor: {
 				primary: '#EC6961',
 				whiteText: '#DDDDDD',
+				darkGray: '#202020',
 			},
 			textColor: {
 				primary: '#EC6961',
-				whiteText: '#DDDDDD',
+				lightGray: '#c4c4c4',
+				smoke: '#878585',
 			},
 			padding: {
-				contain: '10rem',
+				contain: '7.5rem',
+				footer: '20rem',
 			},
 			width: {
 				sectionImg: '950px',
@@ -42,12 +46,13 @@ module.exports = {
 				vh50: '50vh',
 				vh90: '90vh',
 				vh100: '100vh',
-				section: '500px',
-				smallCard: '500px',
+				section: '32rem',
+				bigSection: '56rem',
 				bigCard: '600px',
 			},
 			boxShadow: {
-				button: ' rgba(0, 0, 0, 0.35) 0px 5px 15px;',
+				button: ' rgba(0, 0, 0, 0.35) 5px 5px 15px 0px',
+				card: '2px 7px 15px 0px rgba(0,0,0,0.05)',
 				none: 'none',
 			},
 			backgroundImage: {
