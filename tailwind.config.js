@@ -9,6 +9,7 @@ module.exports = {
 				bree: ['Bree Serif'],
 			},
 			fontSize: {
+				largest: '3.75rem',
 				larger: '3rem',
 				large: '2.25rem',
 				medium: '1.25rem',

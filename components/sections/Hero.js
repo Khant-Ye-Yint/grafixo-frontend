@@ -8,10 +8,10 @@ const Hero = () => {
 	return (
 		<div className='h-vh100 flex flex-row justify-between items-center p-contain bg-heroBg bg-cover bg-no-repeat'>
 			<div className=' flex flex-col items-start space-y-5 z-10'>
-				<h1 className='text-white font-bree text-larger'>
+				<h1 className='text-white font-bree laptop:text-larger desktop:text-largest'>
 					We Make 3D{' '}
 					<TextLoop
-						children={['Animation', '3D Modeling and Rendering']}
+						children={['Animation', 'Modeling', 'Rendering']}
 						className='text-primary font-bold break-words text-shadow'
 						springConfig={{ stiffness: 180 }}
 					/>
