@@ -7,10 +7,25 @@ import Button from '../shared/Button';
 
 import LaptopImg from '../../public/images/laptop.png';
 import CameraImg from '../../public/images/camera.png';
+import SewingMImg from '../../public/images/sewingMachine.png';
 
-const Service = ({ reverse, bgColor, propImg }) => {
+const Service = ({ reverse, bgColor, propImg, title, para }) => {
 	const bgGradi = bgColor === 'red' ? 'bg-redGradi' : 'blue' && 'bg-blueGradi';
-	const imgSrc = propImg === 'laptop' ? LaptopImg : CameraImg;
+	let imgSrc;
+
+	switch (propImg) {
+		case 'laptop':
+			imgSrc = LaptopImg;
+			break;
+		case 'camera':
+			imgSrc = CameraImg;
+			break;
+		case 'sewingM':
+			imgSrc = SewingMImg;
+			break;
+		default:
+			imgSrc = LaptopImg;
+	}
 
 	const { ref, inView } = useInView();
 
@@ -31,15 +46,15 @@ const Service = ({ reverse, bgColor, propImg }) => {
 						reverse ? 'items-end text-right' : 'items-start text-left'
 					} space-y-5 w-full z-10 `}
 					variants={variants}
-					animate={inView ? 'view' : 'notInView'}
+					initial='notInView'
+					animate={inView && 'view'}
 					transition={{ duration: 1.5 }}
 				>
 					<h1 className='text-larger text-primary font-bree text-shadow'>
-						3D Modeling and Rendering
+						{title}
 					</h1>
-					<p className='laptop:text-normal desktop:text-medium font-montserrat text-white w-2/3'>
-						We offer high quality and photorealistic 3D modeling and rendering
-						services for commercial and 3D printing.
+					<p className='laptop:text-normal desktop:text-medium font-montserrat text-lightGray w-2/3'>
+						{para}
 					</p>
 					<Button text='Learn more' />
 				</motion.div>

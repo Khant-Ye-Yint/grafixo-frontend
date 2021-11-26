@@ -16,8 +16,10 @@ const Hero = () => {
 						springConfig={{ stiffness: 180 }}
 					/>
 				</h1>
-				<p className='text-gray-200 text-medium font-montserrat'>
-					Build your dreams and imaginations into 3D world
+				<p className=' text-lightGray text-medium font-montserrat w-1/2'>
+					Are you finding the way to show your product details or properly
+					explain how it works? There is no easier way than a perfect 3d
+					animation to show your product to the world.
 				</p>
 				<Button text='Hire now' />
 			</div>

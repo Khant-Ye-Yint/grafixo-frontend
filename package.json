@@ -12,6 +12,7 @@
     "react-dom": "^17.0.2",
     "react-headroom": "^3.2.0",
     "react-intersection-observer": "^8.32.2",
+    "react-parallax": "^3.3.0",
     "react-text-loop": "^2.3.0",
     "typeface-bree-serif": "^1.1.13",
     "typeface-montserrat": "^1.1.13"
