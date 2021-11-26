@@ -51,6 +51,14 @@ module.exports = {
 				bigSection: '56rem',
 				bigCard: '600px',
 			},
+			minHeight: {
+				vh50: '50vh',
+				vh90: '90vh',
+				vh100: '100vh',
+			},
+			spacing: {
+				vh10: '10vh',
+			},
 			boxShadow: {
 				button: ' rgba(0, 0, 0, 0.35) 5px 5px 15px 0px',
 				card: '2px 7px 15px 0px rgba(0,0,0,0.05)',
@@ -60,7 +68,9 @@ module.exports = {
 				blueGradi: 'url(/images/gradientBlue.png)',
 				redGradi: 'url(/images/gradientRed.png)',
 				heroBg: 'url(/images/tempBg.png)',
+				bubblePattern: 'url(/images/doubleBubble.png)',
 			},
+			backdropFilter: ['hover', 'focus'],
 			screens: {
 				tablet: '640px',
 				// => @media (min-width: 640px) { ... }

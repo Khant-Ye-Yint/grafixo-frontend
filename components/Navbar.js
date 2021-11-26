@@ -18,7 +18,7 @@ const Navbar = () => {
 			</div>
 			<ul className='flex flex-row justify-between w-1/3'>
 				<li className='navLink'>
-					<Link href='/services'>services</Link>
+					<Link href='/portfolio'>portfolio</Link>
 				</li>
 				<li className='navLink'>
 					<Link href='/pricing'>pricing</Link>
