@@ -5,12 +5,12 @@ const portfolio = () => {
 	return (
 		<div className=' bg-darkGray w-full min-h-vh100'>
 			<NavBar />
-			<div className='pt-vh10'>
-				<div className='w-full h-80 flex justify-center items-center bg-bubblePattern  relative'>
+			<div className='pt-vh10 bg-bubblePattern'>
+				<div className='w-full h-80 flex justify-center items-center'>
 					<h1 className='text-white text-5xl font-bree z-10'>
 						3D Modeling And Rendering
 					</h1>
-					<div className='absolute w-full h-full backdrop-filter backdrop-blur-sm'></div>
+					{/* <div className='absolute w-full h-full backdrop-filter backdrop-blur-sm'></div> */}
 				</div>
 			</div>
 			<CardList />

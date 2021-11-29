@@ -24,13 +24,14 @@ const Footer = () => {
 							/>
 						</div>
 					</Link>
-					<span>+959 837 123</span>
-					<span>hello.grafixo.gmail.com</span>
+					<span>+959 765 203 468</span>
+					<span>grafixostudio@gmail.com</span>
 				</div>
 				<div className='flex flex-col space-y-2'>
 					<h1 className='text-primary text-medium font-bold'>LINKS</h1>
-					<FooterLink text='3D Product Animation' link='' />
 					<FooterLink text='3D Modeling And Rendering' link='' />
+					<FooterLink text='3D Product Animation' link='' />
+					<FooterLink text='3D/2D Promotional Animation' link='' />
 				</div>
 				<div className='flex flex-col space-y-2'>
 					<h1 className='text-primary text-medium font-bold'>INFO</h1>
