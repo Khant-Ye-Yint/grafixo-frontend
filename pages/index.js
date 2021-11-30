@@ -5,16 +5,18 @@ import NavBar from '../components/Navbar';
 import Testamonial from '../components/sections/Testamonial';
 import Footer from '../components/sections/Footer';
 
+import Layout from '../components/shared/Layout';
+
 const Home = () => {
 	return (
-		<div className='bg-black bg-opacity-50'>
-			<NavBar />
-			<Hero />
-			<Greeting />
-			<ServiceList />
-			<Testamonial />
-			<Footer />
-		</div>
+		<Layout>
+			<div className='bg-black bg-opacity-50'>
+				<Hero />
+				<Greeting />
+				<ServiceList />
+				<Testamonial />
+			</div>
+		</Layout>
 	);
 };
 

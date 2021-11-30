@@ -11,7 +11,7 @@ import TwitterLogo from '../../public/images/logo/twitter.png';
 
 const Footer = () => {
 	return (
-		<div className='w-full bg-darkGray pt-contain px-footer text-lightGray font-montserrat'>
+		<div className='w-full bg-darkGray pt-contain px-footer text-lightGray font-montserrat relative'>
 			<div className='flex flex-row justify-between'>
 				<div className='flex flex-col space-y-2'>
 					<Link href='/'>
