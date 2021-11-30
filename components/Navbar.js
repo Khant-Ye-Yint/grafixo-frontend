@@ -1,13 +1,12 @@
-import { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import Logo from '../public/images/logo/GrafixoLogo.png';
+import NavDropdown from './shared/NavDropdown';
 
 const Navbar = () => {
 	const router = useRouter();
-
 	const path = router.pathname;
 
 	return (
@@ -26,16 +25,16 @@ const Navbar = () => {
 			</div>
 			<ul className='flex flex-row justify-between w-1/3'>
 				<li className='navLink'>
-					<Link href='/portfolio'>portfolio</Link>
+					<NavDropdown />
 				</li>
 				<li className='navLink'>
-					<Link href='/pricing'>pricing</Link>
+					<Link href='/portfolio'>Portfolio</Link>
 				</li>
 				<li className='navLink'>
-					<Link href=''>services</Link>
+					<Link href='/about'>About us</Link>
 				</li>
 				<li className='navLink'>
-					<Link href='/aboutus'>about us</Link>
+					<Link href='/contact'>Contact us</Link>
 				</li>
 			</ul>
 		</div>
