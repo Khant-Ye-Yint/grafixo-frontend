@@ -1,12 +1,17 @@
 import { motion } from 'framer-motion';
 
-const Button = ({ text }) => {
+const Button = ({ text, ...rest }) => {
 	return (
 		<motion.button
-			className='py-1 px-3 bg-primary transition-colors hover:bg-red-500 text-white font-montserrat font-bold text-medium hover:shadow-button'
+			{...rest}
+			className='py-1 px-3 bg-primary  text-white font-montserrat font-bold text-medium hover:shadow-button'
 			whileTap={{
 				scale: 0.8,
-				transition: { duration: 0.3 },
+				transition: { duration: 0.3, ease: 'easeInOut' },
+			}}
+			whileHover={{
+				backgroundColor: '#e84b41',
+				transition: { duration: 0.3, ease: 'easeInOut' },
 			}}
 		>
 			{text}

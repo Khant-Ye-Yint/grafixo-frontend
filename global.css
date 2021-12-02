@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .navLink {
-	@apply cursor-pointer font-montserrat text-normal text-lightGray hover:text-white;
+	@apply cursor-pointer font-montserrat text-normal text-lightGray hover:text-white font-bold;
 }
 
 .text-shadow {

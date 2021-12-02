@@ -11,7 +11,7 @@ const Navbar = () => {
 
 	return (
 		<div
-			className={`h-vh10 w-full bg-black bg-opacity-30 px-contain flex flex-row justify-between items-center absolute top-0 z-40`}
+			className={`h-vh10 w-full bg-black bg-opacity-30 px-contain flex flex-row justify-between items-center fixed top-0 z-40`}
 		>
 			<div className='cursor-pointer relative h-9 w-1/4'>
 				<Link href='/'>
@@ -24,7 +24,7 @@ const Navbar = () => {
 				</Link>
 			</div>
 			<ul className='flex flex-row justify-between w-1/3'>
-				<li className='navLink'>
+				<li>
 					<NavDropdown />
 				</li>
 				<li className='navLink'>
