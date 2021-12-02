@@ -27,7 +27,7 @@ const Hero = () => {
 			>
 				<source src='/video/heroVid.webm' type='video/webm' />
 			</video>
-			<div className='absolute left-0 top-0 w-full h-full bg-black opacity-50'></div>
+			<div className='absolute left-0 top-0 w-full h-full bg-black opacity-20'></div>
 		</div>
 	);
 };

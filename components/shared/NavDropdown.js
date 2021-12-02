@@ -39,24 +39,24 @@ const NavDropdown = () => {
 							<ChevronDownIcon className='w-5 h-5 ' />
 						</motion.div>
 					</Menu.Button>
-					{/* <Transition
+					<Transition
 						show={open}
 						enter='transition transform duration-[400ms] ease-in-out'
-						enterFrom='opacity-0 -translate-x-full'
-						enterTo='opacity-100  translate-x-0'
+						enterFrom='opacity-0 scale-50'
+						enterTo='opacity-100  scale-100'
 						leave='transition transform duration-[300ms] ease-in-out'
-						leaveFrom='opacity-100 translate-x-0'
-						leaveTo='opacity-0 -translate-x-full'
-					> */}
-					<motion.div
+						leaveFrom='opacity-100 scale-100'
+						leaveTo='opacity-0 scale-50'
+					>
+						{/* <motion.div
 						initial='hidden'
 						animate={open ? 'show' : 'hidden'}
 						transition={{ duration: 0.4, ease: 'easeInOut' }}
 						variants={dropdownVariant}
-					>
+					> */}
 						<Menu.Items
 							static
-							className='absolute flex flex-col mt-3 p-2 bg-black bg-opacity-40 border border-gray-500 border-opacity-50 text-lightGray space-y-2 overflow-hidden'
+							className='absolute flex flex-col mt-3 p-2 bg-black bg-opacity-70 border border-gray-500 border-opacity-50 text-lightGray space-y-2 overflow-hidden'
 						>
 							<Menu.Item>
 								{({ active }) => (
@@ -95,8 +95,8 @@ const NavDropdown = () => {
 								)}
 							</Menu.Item>
 						</Menu.Items>
-					</motion.div>
-					{/* </Transition> */}
+						{/* </motion.div> */}
+					</Transition>
 				</>
 			)}
 		</Menu>

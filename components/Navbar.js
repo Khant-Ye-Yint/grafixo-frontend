@@ -1,19 +1,30 @@
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 
 import Logo from '../public/images/logo/GrafixoLogo.png';
 import NavDropdown from './shared/NavDropdown';
 
 const Navbar = () => {
-	const router = useRouter();
-	const path = router.pathname;
+	const [showBg, setShowBg] = useState(false);
+
+	useEffect(() => {
+		window.addEventListener('scroll', () => {
+			if (window.pageYOffset > 600) {
+				setShowBg(true);
+			} else {
+				setShowBg(false);
+			}
+		});
+	}, []);
 
 	return (
 		<div
-			className={`h-vh10 w-full bg-black bg-opacity-30 px-contain flex flex-row justify-between items-center fixed top-0 z-40`}
+			className={`h-vh10 w-full ${
+				showBg ? 'bg-black' : 'bg-transparent'
+			}  bg-opacity-70 px-contain flex flex-row justify-between items-center fixed top-0 z-40 transition duration-1000 ease-in-out`}
 		>
-			<div className='cursor-pointer relative h-9 w-1/4'>
+			<div className='cursor-pointer relative h-11 w-1/4'>
 				<Link href='/'>
 					<Image
 						src={Logo}
