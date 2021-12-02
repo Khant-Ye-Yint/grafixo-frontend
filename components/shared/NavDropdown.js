@@ -27,7 +27,7 @@ const NavDropdown = () => {
 		<Menu>
 			{({ open }) => (
 				<>
-					<Menu.Button className='flex flex-row text-normal justify-center items-center font-bold text-lightGray hover:text-white'>
+					<Menu.Button className='flex flex-row text-base justify-center items-center font-bold text-lightGray hover:text-white'>
 						Services{' '}
 						<motion.div
 							initial='hidden'
@@ -78,7 +78,7 @@ const NavDropdown = () => {
 											active && 'bg-white bg-opacity-20'
 										} px-2 py-1 whitespace-nowrap hover:text-white`}
 									>
-										3d commercial animation
+										3D Commercial Animation
 									</MyLink>
 								)}
 							</Menu.Item>
@@ -90,7 +90,7 @@ const NavDropdown = () => {
 											active && 'bg-white bg-opacity-20'
 										} px-2 py-1 whitespace-nowrap hover:text-white`}
 									>
-										2d/3d promotional animation
+										3D/2D Promotional Animation
 									</MyLink>
 								)}
 							</Menu.Item>
