@@ -5,7 +5,10 @@ import { Parallax } from 'react-parallax';
 const Greeting = () => {
 	return (
 		<Parallax bgImage='/images/constellation.png' strength={500}>
-			<div className='p-contain flex flex-row-reverse justify-start items-center '>
+			<div
+				className='p-contain flex flex-row-reverse justify-start items-center'
+				name='greeting'
+			>
 				<div className='flex flex-col justify-center items-center'>
 					<h1 className='font-bree text-medium text-primary border-red-400 text-center mb-5 w-1/2'>
 						Are you finding the way to show your product details or properly

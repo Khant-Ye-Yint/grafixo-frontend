@@ -3,7 +3,27 @@
 @tailwind utilities;
 
 .navLink {
-	@apply cursor-pointer font-montserrat text-normal text-lightGray hover:text-white font-bold;
+	@apply cursor-pointer font-montserrat text-normal text-lightGray hover:text-white font-bold inline-block;
+	text-decoration: none;
+}
+
+.navLink::after {
+	content: '';
+	display: block;
+	width: 0;
+	height: 0.25rem;
+	background-color: #ec6961;
+	transition: width 0.5s;
+}
+
+.navLink:hover::after {
+	width: 100%;
+	transition: width 0.5s;
+}
+
+.navLinkDropdown:hover::after {
+	width: 125%;
+	transition: width 0.5s;
 }
 
 .text-shadow {
@@ -12,6 +32,11 @@
 
 .text-title {
 	font-size: 64px;
+}
+
+.scrollDown {
+	left: 50%;
+	transform: translate(50%, 50%);
 }
 
 .pattern-bg {

@@ -1,8 +1,15 @@
 import Button from '../shared/Button';
-
+import { ChevronDownIcon } from '@heroicons/react/solid';
 import TextLoop from 'react-text-loop';
+import * as Scroll from 'react-scroll';
 
 const Hero = () => {
+	const { animateScroll } = Scroll;
+
+	const handleScroll = () => {
+		animateScroll.scrollTo(1000);
+	};
+
 	return (
 		<div className='h-vh100 flex flex-row justify-between items-center p-contain bg-cover bg-no-repeat filter relative'>
 			<div className=' flex flex-col items-start space-y-5 z-10'>
@@ -28,6 +35,10 @@ const Hero = () => {
 				<source src='/video/heroVid.webm' type='video/webm' />
 			</video>
 			<div className='absolute left-0 top-0 w-full h-full bg-black opacity-20'></div>
+			<ChevronDownIcon
+				className='w-10 h-10 text-lightGray hover:text-white cursor-pointer z-10 absolute bottom-10 scrollDown transition-colors duration-300'
+				onClick={handleScroll}
+			/>
 		</div>
 	);
 };

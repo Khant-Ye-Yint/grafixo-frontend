@@ -27,8 +27,8 @@ const NavDropdown = () => {
 		<Menu>
 			{({ open }) => (
 				<>
-					<Menu.Button className='flex flex-row text-base justify-center items-center font-bold text-lightGray hover:text-white'>
-						Services{' '}
+					<Menu.Button className='flex flex-row flex-nowrap justify-center items-center text-lightGray hover:text-white'>
+						<h3 className='navLink navLinkDropdown'>Services</h3>
 						<motion.div
 							initial='hidden'
 							animate={open ? 'show' : 'hidden'}
@@ -36,7 +36,7 @@ const NavDropdown = () => {
 							variants={variants}
 						>
 							{' '}
-							<ChevronDownIcon className='w-5 h-5 ' />
+							<ChevronDownIcon className='w-5 h-5' />
 						</motion.div>
 					</Menu.Button>
 					<Transition

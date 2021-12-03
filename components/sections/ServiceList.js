@@ -14,13 +14,13 @@ const ServiceList = () => {
 				reverse
 				bgColor='red'
 				propImg='camera'
-				title='3d commercial animation'
+				title='3D Commercial Animation'
 				para='We create high quality commercial animation service for your product,service or store.'
 			/>
 			<Service
 				bgColor='blue'
 				propImg='sewingM'
-				title='2d/3d promotional animation'
+				title='3D/2D Promotional Animation'
 				para='We create short animation to put on your social media like facebook and instagram'
 			/>
 		</div>

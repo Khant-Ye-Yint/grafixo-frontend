@@ -11,7 +11,8 @@ const Button = ({ text, ...rest }) => {
 			}}
 			whileHover={{
 				backgroundColor: '#e84b41',
-				transition: { duration: 0.7, ease: 'easeInOut' },
+				scale: 1.1,
+				transition: { duration: 0.3, ease: 'easeInOut' },
 			}}
 		>
 			{text}

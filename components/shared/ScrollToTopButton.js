@@ -24,7 +24,7 @@ const ScrollToTopButton = () => {
 			}`}
 			onClick={scroll.scrollToTop}
 		>
-			<ChevronUpIcon className='w-full h-full bg-primary opacity-60 hover:opacity-100 text-white  rounded-full' />
+			<ChevronUpIcon className='w-full h-full bg-primary opacity-60 hover:opacity-100 transition duration-300 ease-linear text-white  rounded-full' />
 		</div>
 	);
 };
