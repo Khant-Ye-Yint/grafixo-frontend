@@ -10,7 +10,7 @@ const Navbar = () => {
 
 	useEffect(() => {
 		window.addEventListener('scroll', () => {
-			if (window.pageYOffset > 600) {
+			if (window.pageYOffset > 200) {
 				setShowBg(true);
 			} else {
 				setShowBg(false);

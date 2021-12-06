@@ -35,6 +35,9 @@ module.exports = {
 				lightGray: '#c4c4c4',
 				smoke: '#878585',
 			},
+			borderColor: {
+				primary: '#EC6961',
+			},
 			padding: {
 				contain: '7.5rem',
 				footer: '20rem',

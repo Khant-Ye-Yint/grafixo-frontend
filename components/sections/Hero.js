@@ -7,7 +7,7 @@ const Hero = () => {
 	const { animateScroll } = Scroll;
 
 	const handleScroll = () => {
-		animateScroll.scrollTo(1000);
+		animateScroll.scrollTo(500);
 	};
 
 	return (
@@ -22,7 +22,7 @@ const Hero = () => {
 					/>
 				</h1>
 				<p className=' text-white text-medium font-montserrat'>
-					Turn you vision into life with 3D
+					Turn your vision into life with 3D
 				</p>
 				<Button text='Get in touch' />
 			</div>
