@@ -27,6 +27,7 @@ const Navbar = () => {
 			<div className='cursor-pointer relative h-11 w-1/4'>
 				<Link href='/'>
 					<Image
+						priority
 						src={Logo}
 						layout='fill'
 						objectFit='contain'
