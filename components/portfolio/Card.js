@@ -1,20 +1,32 @@
 import Image from 'next/image';
+import { useState } from 'react';
 
 const Card = ({ imgSrc, imgAlt }) => {
+	const [hover, setHover] = useState(false);
+
 	return (
-		<div className='w-full h-96 cursor-pointer relative flex justify-center items-center'>
-			<div className='w-full h-full z-20 text-white flex flex-col justify-center items-center space-y-5 backdrop-filter transition ease-in-out duration-300 hover:backdrop-brightness-40 hover:backdrop-blur-md opacity-0 hover:opacity-100'>
+		<div
+			className='w-full h-96 cursor-pointer relative flex justify-center items-center'
+			onMouseEnter={() => setHover(true)}
+			onMouseLeave={() => setHover(false)}
+		>
+			<div className='w-full h-full z-20 text-white flex flex-col justify-center items-center space-y-5 opacity-0 hover:opacity-100 bg-black bg-opacity-0 hover:bg-opacity-40 transition ease-in-out duration-500'>
 				<h1 className='text-white font-montserrat font-bold text-3xl'>
 					Polaroid
 				</h1>
 			</div>
-			<Image
-				src={imgSrc}
-				alt={imgAlt}
-				layout='fill'
-				objectPosition='center'
-				objectFit='cover'
-			/>
+			<div className='z-10'>
+				<Image
+					src={imgSrc}
+					alt={imgAlt}
+					layout='fill'
+					objectPosition='center'
+					objectFit='cover'
+					className={`${
+						hover && 'scale-125'
+					} transition-transform duration-300`}
+				/>
+			</div>
 		</div>
 	);
 };

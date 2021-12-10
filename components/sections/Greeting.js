@@ -22,7 +22,7 @@ const Greeting = () => {
 					</h1>
 					<AnimatedLine />
 				</div>
-				<div className='absolute w-full h-full top-0 left-0 bg-black bg-opacity-5'></div>
+				<div className='absolute w-full h-full top-0 left-0 bg-gray-500 bg-opacity-5'></div>
 			</div>
 		</Parallax>
 	);
