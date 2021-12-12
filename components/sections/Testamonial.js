@@ -1,5 +1,3 @@
-import { useEffect } from 'react';
-
 import TestamonialCard from '../shared/TestamonialCard';
 import AnimatedLine from '../shared/AnimatedLine';
 import { Parallax } from 'react-parallax';
@@ -36,7 +34,7 @@ const Testamonial = () => {
 							centeredSlides={true}
 							loop={true}
 							autoplay={{
-								delay: 2500,
+								delay: 5000,
 								disableOnInteraction: false,
 							}}
 							pagination={{

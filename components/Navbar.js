@@ -24,7 +24,7 @@ const Navbar = () => {
 				showBg ? 'bg-black' : 'bg-transparent'
 			}  bg-opacity-70 px-contain flex flex-row justify-between items-center fixed top-0 z-40 transition duration-1000 ease-in-out`}
 		>
-			<div className='cursor-pointer relative h-11 w-1/4'>
+			<div className='cursor-pointer relative h-12 w-1/4'>
 				<Link href='/'>
 					<Image
 						priority
