@@ -20,9 +20,9 @@ const Testamonial = () => {
 	return (
 		<Parallax bgImage='/images/constellation.png' strength={500}>
 			<div>
-				<div className='w-full p-contain space-y-24 flex flex-col justify-center items-center'>
+				<div className='w-full laptop:p-contain tablet:p-tabletContain laptop:space-y-24 tablet:space-y-14 phone:p-phone phone:space-y-10 flex flex-col justify-center items-center'>
 					<div className='flex flex-col items-center z-10'>
-						<h1 className='text-large text-primary font-bree text-center mb-3'>
+						<h1 className='text-large phone:text-large text-primary font-bree text-center mb-3'>
 							What Clients Say About Us
 						</h1>
 						<AnimatedLine />
@@ -44,6 +44,22 @@ const Testamonial = () => {
 							style={{
 								'--swiper-navigation-color': '#EC6961',
 								'--swiper-pagination-color': '#EC6961',
+							}}
+							breakpoints={{
+								// phone
+								375: {
+									slidesPerView: 1,
+								},
+								// tablet
+								640: {
+									slidesPerView: 2,
+									spaceBetween: 20,
+								},
+								//laptop
+								1024: {
+									slidesPerView: 3,
+									spaceBetween: 30,
+								},
 							}}
 						>
 							<SwiperSlide className='grid place-items-center'>

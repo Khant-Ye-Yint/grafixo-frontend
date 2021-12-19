@@ -19,7 +19,7 @@ const ScrollToTopButton = () => {
 
 	return (
 		<div
-			className={`w-10 h-10 cursor-pointer fixed bottom-10 right-10 z-50 ${
+			className={`w-10 h-10 cursor-pointer fixed bottom-10 right-10 z-40 ${
 				show ? 'opacity-100' : 'opacity-0'
 			}`}
 			onClick={scroll.scrollToTop}

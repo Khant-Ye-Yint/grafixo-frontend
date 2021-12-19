@@ -12,6 +12,7 @@ module.exports = {
 				largest: '3.75rem',
 				larger: '3rem',
 				large: '2.25rem',
+				phoneMedium: '2rem',
 				medium: '1.25rem',
 				normal: '1rem',
 				testamonial: '0.85rem',
@@ -40,6 +41,8 @@ module.exports = {
 			},
 			padding: {
 				contain: '7.5rem',
+				tabletContain: '3rem',
+				phone: '1.25rem',
 				footer: '20rem',
 			},
 			width: {
@@ -76,6 +79,7 @@ module.exports = {
 			},
 			backdropFilter: ['hover', 'focus'],
 			screens: {
+				phone: '375px',
 				tablet: '640px',
 				// => @media (min-width: 640px) { ... }
 

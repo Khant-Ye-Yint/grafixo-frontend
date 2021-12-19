@@ -11,9 +11,9 @@ const Hero = () => {
 	};
 
 	return (
-		<div className='h-vh100 flex flex-row justify-between items-center p-contain bg-cover bg-no-repeat filter relative'>
+		<div className='h-vh100 flex flex-row justify-between items-center laptop:p-contain tablet:px-tabletContain phone:px-phone relative'>
 			<div className=' flex flex-col items-start space-y-5 z-10'>
-				<h1 className='text-white font-bree laptop:text-larger desktop:text-largest'>
+				<h1 className='text-white font-bree laptop:text-larger desktop:text-largest phone:text-phoneMedium'>
 					We Make 3D{' '}
 					<TextLoop
 						children={['Animation', 'Modeling', 'Rendering']}
@@ -36,7 +36,7 @@ const Hero = () => {
 			</video>
 			<div className='absolute left-0 top-0 w-full h-full bg-black opacity-20'></div>
 			<ChevronDownIcon
-				className='w-10 h-10 text-lightGray hover:text-white cursor-pointer z-10 absolute bottom-10 scrollDown transition-colors duration-300'
+				className='w-10 h-10 text-lightGray hover:text-white cursor-pointer z-10 absolute bottom-10 left-1/2 transition-colors duration-300'
 				onClick={handleScroll}
 			/>
 		</div>

@@ -36,30 +36,34 @@ const Service = ({ reverse, bgColor, propImg, title, para }) => {
 
 	return (
 		<div
-			className={`h-section w-full px-contain ${bgGradi} bg-cover bg-no-repeat flex ${
-				reverse ? 'flex-row-reverse' : 'flex-row'
-			} justify-between items-center`}
+			className={` w-full laptop:px-contain laptop:py-16 tablet:p-tabletContain phone:p-phone  ${bgGradi} bg-cover bg-no-repeat flex ${
+				reverse
+					? 'laptop:flex-row-reverse tablet:flex-col phone:flex-col'
+					: 'laptop:flex-row tablet:flex-col phone:flex-col'
+			} justify-between items-center tablet:space-y-10 phone:space-y-10`}
 		>
-			<div ref={ref} className='w-1/2'>
+			<div ref={ref} className='w-full tablet:w-full'>
 				<motion.div
-					className={`flex flex-col ${
-						reverse ? 'items-end text-right' : 'items-start text-left'
+					className={`flex flex-col  ${
+						reverse
+							? 'items-end text-right phone:text-left phone:items-start'
+							: 'items-start text-left'
 					} space-y-5 w-full z-10 `}
 					variants={variants}
 					initial='notInView'
 					animate={inView && 'view'}
 					transition={{ duration: 1.5 }}
 				>
-					<h1 className='text-larger text-primary font-bree text-shadow'>
+					<h1 className='text-larger phone:text-large text-primary font-bree text-shadow'>
 						{title}
 					</h1>
-					<p className='laptop:text-normal desktop:text-medium font-montserrat text-lightGray w-2/3'>
+					<p className='laptop:text-normal desktop:text-medium font-montserrat text-lightGray w-2/3 phone:w-full'>
 						{para}
 					</p>
 					<Button text='Learn more' />
 				</motion.div>
 			</div>
-			<div className='w-1/2 h-5/6 relative'>
+			<div className='w-full tablet:h-72 laptop:h-80 phone:h-52 relative'>
 				<Image
 					src={imgSrc}
 					layout='fill'

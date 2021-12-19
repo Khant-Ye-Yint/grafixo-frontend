@@ -23,8 +23,8 @@ const Card = ({ imgSrc, imgAlt }) => {
 					objectPosition='center'
 					objectFit='cover'
 					className={`${
-						hover && 'scale-125 filter blur-sm transition duration-300'
-					} transition-transform duration-300`}
+						hover && 'scale-125 filter blur-sm transition duration-500'
+					} transition duration-500`}
 				/>
 			</div>
 		</div>

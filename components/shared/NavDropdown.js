@@ -3,6 +3,10 @@ import { Menu, Transition } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/solid';
 import { motion } from 'framer-motion';
 
+import useDevice from '../../hooks/useDevice';
+
+const device = useDevice();
+
 function MyLink(props) {
 	let { href, children, ...rest } = props;
 	return (
@@ -56,7 +60,9 @@ const NavDropdown = () => {
 					> */}
 						<Menu.Items
 							static
-							className='absolute flex flex-col mt-3 p-2 bg-black bg-opacity-70 border border-gray-500 border-opacity-50 text-lightGray space-y-2 overflow-hidden'
+							className={`absolute flex flex-col mt-3 p-2 bg-black bg-opacity-70 border border-gray-500 border-opacity-50 text-lightGray space-y-2 overflow-hidden ${
+								device === 'phone' && 'transformCenter'
+							} `}
 						>
 							<Menu.Item>
 								{({ active }) => (
