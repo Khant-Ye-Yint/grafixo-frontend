@@ -36,7 +36,7 @@ const Hero = () => {
 			</video>
 			<div className='absolute left-0 top-0 w-full h-full bg-black opacity-20'></div>
 			<ChevronDownIcon
-				className='w-10 h-10 text-lightGray hover:text-white cursor-pointer z-10 absolute bottom-10 left-1/2 transition-colors duration-300'
+				className='w-10 h-10 text-lightGray hover:text-white cursor-pointer z-10 absolute bottom-10 transformCenter transition-colors duration-300'
 				onClick={handleScroll}
 			/>
 		</div>

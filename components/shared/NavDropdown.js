@@ -22,11 +22,6 @@ const NavDropdown = () => {
 		hidden: { rotate: 0 },
 	};
 
-	const dropdownVariant = {
-		show: { opacity: 1, scaleY: 1 },
-		hidden: { opacity: 0, scaleY: 0 },
-	};
-
 	return (
 		<Menu>
 			{({ open }) => (
@@ -52,12 +47,6 @@ const NavDropdown = () => {
 						leaveFrom='opacity-100 scale-100'
 						leaveTo='opacity-0 scale-50'
 					>
-						{/* <motion.div
-						initial='hidden'
-						animate={open ? 'show' : 'hidden'}
-						transition={{ duration: 0.4, ease: 'easeInOut' }}
-						variants={dropdownVariant}
-					> */}
 						<Menu.Items
 							static
 							className={`absolute flex flex-col mt-3 p-2 bg-black bg-opacity-70 border border-gray-500 border-opacity-50 text-lightGray space-y-2 overflow-hidden ${
@@ -101,7 +90,6 @@ const NavDropdown = () => {
 								)}
 							</Menu.Item>
 						</Menu.Items>
-						{/* </motion.div> */}
 					</Transition>
 				</>
 			)}

@@ -49,7 +49,7 @@ const Navbar = () => {
 				showBg ? 'bg-black' : 'bg-transparent'
 			}  bg-opacity-70 tablet:px-tabletContain laptop:px-contain phone:px-5 flex flex-row justify-between items-center fixed tablet:fixed top-0 z-40 transition duration-1000 ease-in-out`}
 		>
-			<div className='cursor-pointer relative h-12 w-1/4 phone:w-1/3'>
+			<div className='cursor-pointer relative h-12 w-1/4 phone:w-2/5'>
 				<Link href='/'>
 					<Image
 						priority
@@ -71,7 +71,7 @@ const Navbar = () => {
 			)}
 			{device === 'phone' ? (
 				<motion.ul
-					className='flex z-50 phone:absolute phone:h-screen phone:justify-between phone:left-0 phone:top-0 phone:w-full phone:flex-col phone:bg-black phone:items-center phone:py-24 phone:bg-opacity-80'
+					className='flex z-50 phone:absolute phone:h-screen phone:justify-around phone:left-0 phone:top-0 phone:w-full phone:flex-col phone:bg-black phone:items-center phone:py-24 phone:bg-opacity-80'
 					variants={variants}
 					initial='hidden'
 					animate={show ? 'show' : 'hidden'}
@@ -97,7 +97,7 @@ const Navbar = () => {
 					/>
 				</motion.ul>
 			) : (
-				<div className='flex laptop:flex-row tablet:flex-row justify-between z-50 w-1/2 laptop:w-1/3 tablet:w-3/5'>
+				<ul className='flex laptop:flex-row tablet:flex-row justify-between z-50 w-1/2 laptop:w-1/3 tablet:w-3/5 list-none'>
 					<li>
 						<NavDropdown />
 					</li>
@@ -110,7 +110,7 @@ const Navbar = () => {
 					<li className='navLink'>
 						<Link href='/contact'>Contact us</Link>
 					</li>
-				</div>
+				</ul>
 			)}
 		</div>
 	);

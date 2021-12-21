@@ -76,6 +76,7 @@ module.exports = {
 				redGradi: 'url(/images/gradientRed.png)',
 				heroBg: 'url(/images/tempBg.png)',
 				bubblePattern: 'url(/images/doubleBubble.png)',
+				darkBg: 'url(/images/darkBg.png)',
 			},
 			backdropFilter: ['hover', 'focus'],
 			screens: {
@@ -83,7 +84,7 @@ module.exports = {
 				tablet: '640px',
 				// => @media (min-width: 640px) { ... }
 
-				laptop: '1024px',
+				laptop: '1090px',
 				// => @media (min-width: 1024px) { ... }
 
 				desktop: '1920px',

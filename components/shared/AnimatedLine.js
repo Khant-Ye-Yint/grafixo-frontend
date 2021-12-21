@@ -7,7 +7,7 @@ const AnimatedLine = () => {
 	});
 
 	const variants = {
-		seen: { width: '20rem' },
+		seen: { width: '15rem' },
 		hidden: { width: 0 },
 	};
 
