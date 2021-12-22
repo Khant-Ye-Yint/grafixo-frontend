@@ -22,7 +22,7 @@ const Testamonial = () => {
 			layers={[
 				{
 					image: '/images/constellation.png',
-					amount: 0.8,
+					amount: 0.5,
 					expended: true,
 				},
 			]}
