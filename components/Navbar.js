@@ -71,7 +71,7 @@ const Navbar = () => {
 			)}
 			{device === 'phone' ? (
 				<motion.ul
-					className='flex z-50 phone:absolute phone:h-screen phone:justify-around phone:left-0 phone:top-0 phone:w-full phone:flex-col phone:bg-black phone:items-center phone:py-24 phone:bg-opacity-80'
+					className='flex z-40 absolute h-screen justify-around left-0 top-0 w-full flex-col bg-black items-center py-24 bg-opacity-80 list-none'
 					variants={variants}
 					initial='hidden'
 					animate={show ? 'show' : 'hidden'}
@@ -99,7 +99,8 @@ const Navbar = () => {
 			) : (
 				<ul className='flex laptop:flex-row tablet:flex-row justify-between z-50 w-1/2 laptop:w-1/3 tablet:w-3/5 list-none'>
 					<li>
-						<NavDropdown />
+						{' '}
+						<NavDropdown />{' '}
 					</li>
 					<li className='navLink'>
 						<Link href='/portfolio'>Portfolio</Link>

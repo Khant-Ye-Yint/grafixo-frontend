@@ -1,26 +1,33 @@
+import { useEffect, useState } from 'react';
+
 const useDevice = () => {
+	const [device, setDevice] = useState('');
 	let deviceWidth;
 
-	if (typeof window !== 'undefined') {
-		deviceWidth = window.screen.width;
-	}
+	useEffect(() => {
+		if (typeof window !== 'undefined') {
+			deviceWidth = window.screen.width;
+		}
 
-	if (deviceWidth >= 1920) {
-		return 'desktop';
-	} else if (deviceWidth >= 1024) {
-		return 'laptop';
-	} else if (deviceWidth >= 640) {
-		return 'tablet';
-	} else if (deviceWidth >= 375) {
-		return 'phone';
-	} else return deviceWidth;
+		if (deviceWidth >= 1920) {
+			setDevice('desktop');
+		} else if (deviceWidth >= 1024) {
+			setDevice('laptop');
+		} else if (deviceWidth >= 640) {
+			setDevice('tablet');
+		} else if (deviceWidth >= 375) {
+			setDevice('phone');
+		}
+	}, []);
+
+	return device;
 };
 
-// const devices = {
-// 	desktop: 'desktop',
-// 	laptop: 'laptop',
-// 	tablet: 'tablet',
-// 	phone: 'phone',
-// };
+// // const devices = {
+// // 	desktop: 'desktop',
+// // 	laptop: 'laptop',
+// // 	tablet: 'tablet',
+// // 	phone: 'phone',
+// // };
 
 export default useDevice;

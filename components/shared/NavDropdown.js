@@ -5,10 +5,9 @@ import { motion } from 'framer-motion';
 
 import useDevice from '../../hooks/useDevice';
 
-const device = useDevice();
-
 function MyLink(props) {
 	let { href, children, ...rest } = props;
+
 	return (
 		<Link href={href}>
 			<a {...rest}>{children}</a>
@@ -17,6 +16,8 @@ function MyLink(props) {
 }
 
 const NavDropdown = () => {
+	const device = useDevice();
+
 	const variants = {
 		show: { rotate: 180 },
 		hidden: { rotate: 0 },
