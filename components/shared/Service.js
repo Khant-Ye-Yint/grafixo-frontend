@@ -3,6 +3,8 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
+import useDevice from '../../hooks/useDevice';
+
 import Button from '../shared/Button';
 
 import LaptopImg from '../../public/images/laptop.png';
@@ -34,6 +36,8 @@ const Service = ({ reverse, bgColor, propImg, title, para }) => {
 		notInView: { x: -400, opacity: 0 },
 	};
 
+	const device = useDevice();
+
 	return (
 		<div
 			className={` w-full laptop:px-contain laptop:py-16 tablet:p-tabletContain phone:p-phone  ${bgGradi} bg-cover bg-no-repeat flex ${
@@ -63,12 +67,14 @@ const Service = ({ reverse, bgColor, propImg, title, para }) => {
 					<Button text='Learn more' />
 				</motion.div>
 			</div>
-			<div className='w-full tablet:h-72 laptop:h-80 phone:h-52 relative'>
+			<div className='w-full tablet:h-72 laptop:h-96 phone:h-52 relative'>
 				<Image
 					src={imgSrc}
 					layout='fill'
 					objectFit='contain'
-					objectPosition={`${reverse ? 'left' : 'right'}`}
+					objectPosition={`${
+						device === 'phone' ? 'center' : reverse ? 'left' : 'right'
+					}`}
 				/>
 			</div>
 		</div>
