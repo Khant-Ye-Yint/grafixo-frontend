@@ -9,9 +9,7 @@ const useDevice = () => {
 			deviceWidth = window.screen.width;
 		}
 
-		if (deviceWidth >= 1920) {
-			setDevice('desktop');
-		} else if (deviceWidth >= 1024) {
+		if (deviceWidth >= 1024) {
 			setDevice('laptop');
 		} else if (deviceWidth >= 640) {
 			setDevice('tablet');

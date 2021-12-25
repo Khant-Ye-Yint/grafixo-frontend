@@ -7,7 +7,7 @@ import Headphone from '../../public/images/portfolio/earphone.png';
 
 const CardList = () => {
 	return (
-		<div className='grid grid-cols-4'>
+		<div className='grid laptop:grid-cols-4 tablet:grid-cols-3 phone:grid-cols-2'>
 			<Card imgSrc={Shoe} imgAlt='Shoe' />
 			<Card imgSrc={Camera} imgAlt='Camera' />
 			<Card imgSrc={Glasses} imgAlt='Glasses' />
