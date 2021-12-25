@@ -28,6 +28,7 @@ const Greeting = () => {
 				</h1>
 				<AnimatedLine />
 			</div>
+			<div className='absolute w-full h-full'></div>
 		</ParallaxBanner>
 	);
 };

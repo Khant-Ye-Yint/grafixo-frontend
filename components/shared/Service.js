@@ -40,17 +40,17 @@ const Service = ({ reverse, bgColor, propImg, title, para }) => {
 
 	return (
 		<div
-			className={` w-full laptop:px-contain laptop:py-16 tablet:p-tabletContain phone:p-phone  ${bgGradi} bg-cover bg-no-repeat flex ${
+			className={` w-full laptop:px-contain laptop:py-5 tablet:p-tabletContain phone:p-phone  ${bgGradi} bg-cover bg-no-repeat flex  ${
 				reverse
-					? 'laptop:flex-row-reverse tablet:flex-col phone:flex-col'
-					: 'laptop:flex-row tablet:flex-col phone:flex-col'
-			} justify-between items-center tablet:space-y-10 phone:space-y-10`}
+					? 'laptop:flex-row-reverse tablet:flex-row-reverse phone:flex-col'
+					: 'laptop:flex-row tablet:flex-row phone:flex-col'
+			} justify-between items-center laptop:space-y-0 tablet:space-y-10 phone:space-y-10`}
 		>
 			<div ref={ref} className='w-full tablet:w-full'>
 				<motion.div
 					className={`flex flex-col  ${
 						reverse
-							? 'items-end text-right phone:text-left phone:items-start'
+							? 'items-end text-right tablet:items-end tablet:text-right phone:text-left phone:items-start'
 							: 'items-start text-left'
 					} space-y-5 w-full z-10 `}
 					variants={variants}
@@ -67,7 +67,7 @@ const Service = ({ reverse, bgColor, propImg, title, para }) => {
 					<Button text='Learn more' />
 				</motion.div>
 			</div>
-			<div className='w-full tablet:h-72 laptop:h-96 phone:h-52 relative'>
+			<div className='w-full tablet:h-60 laptop:h-96 phone:h-52 tablet:w-full relative '>
 				<Image
 					src={imgSrc}
 					layout='fill'
