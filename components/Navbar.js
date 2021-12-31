@@ -3,9 +3,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import useDevice from '../hooks/useDevice';
+import useAuth from '../hooks/useAuth';
 
 import Logo from '../public/images/logo/GrafixoLogo.png';
 import NavDropdown from './shared/NavDropdown';
+import LogoutButton from './shared/LogoutButton';
 import { motion } from 'framer-motion';
 
 import { XIcon, MenuAlt3Icon } from '@heroicons/react/solid';
@@ -15,6 +17,7 @@ const Navbar = () => {
 	const [show, setShow] = useState(false);
 
 	const device = useDevice();
+	const { isAuth } = useAuth();
 
 	useEffect(() => {
 		window.addEventListener('scroll', () => {
@@ -97,7 +100,7 @@ const Navbar = () => {
 					/>
 				</motion.ul>
 			) : (
-				<ul className='flex laptop:flex-row tablet:flex-row justify-between z-50 w-1/2 laptop:w-1/3 tablet:w-3/5 list-none'>
+				<ul className='flex laptop:flex-row tablet:flex-row justify-between items-center z-50 w-1/2 laptop:w-1/3 tablet:w-3/5 list-none'>
 					<li>
 						{' '}
 						<NavDropdown />{' '}
@@ -111,6 +114,7 @@ const Navbar = () => {
 					<li className='navLink'>
 						<Link href='/contact'>Contact us</Link>
 					</li>
+					{isAuth && <LogoutButton text='Logout' />}
 				</ul>
 			)}
 		</div>
