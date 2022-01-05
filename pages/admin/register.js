@@ -5,6 +5,8 @@ import { useRouter } from 'next/router';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import withAuth from '../../components/admin/withAuth';
+
 const register = () => {
 	const nameRef = useRef();
 	const emailRef = useRef();
@@ -94,4 +96,4 @@ const register = () => {
 	);
 };
 
-export default register;
+export default withAuth(register);

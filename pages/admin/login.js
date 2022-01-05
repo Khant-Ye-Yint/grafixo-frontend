@@ -5,8 +5,6 @@ import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import AnchorLink from '../../components/admin/AnchorLink';
-
 import useAuth from '../../hooks/useAuth';
 
 const login = () => {
@@ -78,14 +76,6 @@ const login = () => {
 						Login
 					</button>
 				</form>
-				<p>
-					Don't have account?{' '}
-					<AnchorLink
-						href='/admin/register'
-						text='register here'
-						className=' text-blue-600 hover:text-blue-700 active:text-blue-800'
-					/>
-				</p>
 			</div>
 		</div>
 	);

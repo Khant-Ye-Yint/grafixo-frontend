@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 import useDevice from '../hooks/useDevice';
 import useAuth from '../hooks/useAuth';
+import useScrollControl from '../hooks/useScrollControl';
 
 import Logo from '../public/images/logo/GrafixoLogo.png';
 import NavDropdown from './shared/NavDropdown';
@@ -15,19 +16,29 @@ import { XIcon, MenuAlt3Icon } from '@heroicons/react/solid';
 const Navbar = () => {
 	const [showBg, setShowBg] = useState(false);
 	const [show, setShow] = useState(false);
+	const [width, setWidth] = useState();
 
 	const device = useDevice();
+	const { allowScroll, preventScroll } = useScrollControl();
 	const { isAuth } = useAuth();
 
 	useEffect(() => {
-		window.addEventListener('scroll', () => {
-			if (window.pageYOffset > 200) {
-				setShowBg(true);
-			} else {
-				setShowBg(false);
-			}
-		});
-	}, []);
+		if (typeof window !== 'undefined') {
+			const changeBg = () => {
+				if (window.pageYOffset > 200) {
+					setShowBg(true);
+				} else {
+					setShowBg(false);
+				}
+			};
+
+			window.addEventListener('scroll', () => changeBg());
+
+			show ? preventScroll() : allowScroll();
+
+			return window.removeEventListener('scroll', () => changeBg());
+		}
+	}, [show]);
 
 	const variants = {
 		show: {
@@ -100,7 +111,7 @@ const Navbar = () => {
 					/>
 				</motion.ul>
 			) : (
-				<ul className='flex laptop:flex-row tablet:flex-row justify-between items-center z-50 w-1/2 laptop:w-1/3 tablet:w-3/5 list-none'>
+				<ul className='flex laptop:flex-row tablet:flex-row justify-between items-center z-50 w-1/2 laptop:w-1/2 tablet:w-3/5 list-none'>
 					<li>
 						{' '}
 						<NavDropdown />{' '}

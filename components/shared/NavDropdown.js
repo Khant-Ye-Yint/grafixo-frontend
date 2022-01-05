@@ -23,6 +23,14 @@ const NavDropdown = () => {
 		hidden: { rotate: 0 },
 	};
 
+	const categories = [
+		{
+			name: '3D Modeling And Rendering',
+			slug: '3D-Modeling-And-Rendering',
+		},
+		{ name: '3D Animation', slug: '3D-Animation' },
+	];
+
 	return (
 		<Menu>
 			{({ open }) => (
@@ -54,42 +62,20 @@ const NavDropdown = () => {
 								device === 'phone' && 'transformCenter'
 							} `}
 						>
-							<Menu.Item>
-								{({ active }) => (
-									<MyLink
-										href='/services/3d-modeling-and-rendering'
-										className={`${
-											active && 'bg-white bg-opacity-20'
-										} px-2 py-1 whitespace-nowrap hover:text-white`}
-									>
-										3D Modeling and Rendering
-									</MyLink>
-								)}
-							</Menu.Item>
-							<Menu.Item>
-								{({ active }) => (
-									<MyLink
-										href='/services/3d-commercial-animation'
-										className={`${
-											active && 'bg-white bg-opacity-20'
-										} px-2 py-1 whitespace-nowrap hover:text-white`}
-									>
-										3D Commercial Animation
-									</MyLink>
-								)}
-							</Menu.Item>
-							<Menu.Item>
-								{({ active }) => (
-									<MyLink
-										href='/services/promotional-animation'
-										className={`${
-											active && 'bg-white bg-opacity-20'
-										} px-2 py-1 whitespace-nowrap hover:text-white`}
-									>
-										3D/2D Promotional Animation
-									</MyLink>
-								)}
-							</Menu.Item>
+							{categories.map((category) => (
+								<Menu.Item>
+									{({ active }) => (
+										<MyLink
+											href={`/services/${category.slug}`}
+											className={`${
+												active && 'bg-white bg-opacity-20'
+											} px-2 py-1 whitespace-nowrap hover:text-white`}
+										>
+											{category.name}
+										</MyLink>
+									)}
+								</Menu.Item>
+							))}
 						</Menu.Items>
 					</Transition>
 				</>
