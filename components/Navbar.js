@@ -16,7 +16,6 @@ import { XIcon, MenuAlt3Icon } from '@heroicons/react/solid';
 const Navbar = () => {
 	const [showBg, setShowBg] = useState(false);
 	const [show, setShow] = useState(false);
-	const [width, setWidth] = useState();
 
 	const device = useDevice();
 	const { allowScroll, preventScroll } = useScrollControl();
