@@ -1,6 +1,5 @@
 import Image from 'next/image';
-import { useState } from 'react';
-import { useEffect } from 'react/cjs/react.development';
+import { useState, useEffect } from 'react';
 import useDevice from '../../hooks/useDevice';
 import useScrollControl from '../../hooks/useScrollControl';
 
