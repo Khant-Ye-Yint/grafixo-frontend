@@ -40,7 +40,7 @@ const Footer = () => {
 				</div>
 			</div>
 			<div className='w-full h-20  mt-28 flex flex-row justify-between items-center border-t border-gray-500'>
-				<span className='text-small'>Copyright © 2021</span>
+				<span className='text-small'>Copyright © 2022</span>
 				<div className='flex flex-row items-center space-x-5'>
 					<span className='cursor-pointer'>
 						<Link href=''>
