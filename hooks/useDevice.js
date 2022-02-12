@@ -9,13 +9,17 @@ const useDevice = () => {
 			deviceWidth = window.screen.width;
 		}
 
-		if (deviceWidth >= 1024) {
-			setDevice('laptop');
-		} else if (deviceWidth >= 640) {
-			setDevice('tablet');
-		} else if (deviceWidth >= 375) {
-			setDevice('phone');
-		}
+		const guessDevice = () => {
+			if (deviceWidth >= 1024) {
+				setDevice('laptop');
+			} else if (deviceWidth >= 640) {
+				setDevice('tablet');
+			} else if (deviceWidth >= 375) {
+				setDevice('phone');
+			}
+		};
+
+		guessDevice();
 	}, []);
 
 	return device;

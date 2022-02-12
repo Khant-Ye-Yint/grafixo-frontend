@@ -2,9 +2,15 @@ import React, { useEffect, useState, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import ReactPlayer from 'react-player/youtube';
 
+import { CgClose } from 'react-icons/cg';
+
+import useDevice from '../../hooks/useDevice';
+
 function Modal({ modalShow, setModalShow }) {
 	const [isBrowser, setIsBrowser] = useState(false);
 	const modalRef = useRef(null);
+
+	const device = useDevice();
 
 	useEffect(() => {
 		setIsBrowser(true);
@@ -29,28 +35,31 @@ function Modal({ modalShow, setModalShow }) {
 	const modalContent = modalShow ? (
 		<div className='fixed top-0 left-0 bottom-0 right-0 w-full h-full flex justify-center items-center bg-black z-50 bg-opacity-80'>
 			<div
-				className=' bg-darkGray text-black tracking-wide lg:w-mlg md:w-mmd w-80'
+				className=' bg-darkGray text-black tracking-wide lg:w-mlg md:w-mmd w-72'
 				ref={modalRef}
 			>
 				<div className='flex flex-row justify-between items-center px-8 my-4'>
 					<h1 className='text-xl font-bold font-bree text-primary'>Polaroid</h1>
 					<button
 						onClick={() => setModalShow(false)}
-						className='bold text-white hover:text-lightGray text-lg  p-1 font-bold'
+						className='bold text-white hover:text-lightGray text-lg  p-1'
 					>
-						<h1>X</h1>
+						<CgClose />
 					</button>
 				</div>
-				{/* <div className='h-56 bg-gray-400'> */}
-				<div>
-					<ReactPlayer
-						url={'https://youtu.be/QLSnkSIhvJQ'}
-						width='full'
-						controls
-						playing
-					/>
-				</div>
-
+				<ReactPlayer
+					url={'https://youtu.be/QLSnkSIhvJQ'}
+					width='full'
+					height={
+						device === 'laptop'
+							? '40rem'
+							: device === 'phone'
+							? '14rem'
+							: '23rem'
+					}
+					controls
+					playing
+				/>
 				<div className='px-8 my-5'>
 					<h3 className='text-normal  font-bree text-white'>
 						Company - Astra Shark
