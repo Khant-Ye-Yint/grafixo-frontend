@@ -1,19 +1,36 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import ReactPlayer from 'react-player/youtube';
 
 function Modal({ modalShow, setModalShow }) {
 	const [isBrowser, setIsBrowser] = useState(false);
+	const modalRef = useRef(null);
 
 	useEffect(() => {
 		setIsBrowser(true);
 	}, []);
 
+	useEffect(() => {
+		if (typeof window !== null && modalRef.current !== null) {
+			let handler = (event) => {
+				if (!modalRef.current.contains(event.target)) {
+					setModalShow(false);
+				}
+			};
+
+			document.addEventListener('mousedown', handler);
+
+			return () => {
+				document.removeEventListener('mousedown', handler);
+			};
+		}
+	});
+
 	const modalContent = modalShow ? (
-		<div className='fixed top-0 left-0 bottom-0 right-0 w-full h-full flex justify-center items-center bg-black z-50 bg-opacity-50 '>
+		<div className='fixed top-0 left-0 bottom-0 right-0 w-full h-full flex justify-center items-center bg-black z-50 bg-opacity-80'>
 			<div
-				className=' bg-darkGray text-black tracking-wide'
-				style={{ width: '63rem' }}
+				className=' bg-darkGray text-black tracking-wide lg:w-mlg md:w-mmd w-80'
+				ref={modalRef}
 			>
 				<div className='flex flex-row justify-between items-center px-8 my-4'>
 					<h1 className='text-xl font-bold font-bree text-primary'>Polaroid</h1>
@@ -25,12 +42,14 @@ function Modal({ modalShow, setModalShow }) {
 					</button>
 				</div>
 				{/* <div className='h-56 bg-gray-400'> */}
-				<ReactPlayer
-					url={'https://www.youtube.com/watch?v=mgRs_Dwu_ZY'}
-					width='full'
-					height={'35rem'}
-					controls
-				/>
+				<div>
+					<ReactPlayer
+						url={'https://youtu.be/QLSnkSIhvJQ'}
+						width='full'
+						controls
+						playing
+					/>
+				</div>
 
 				<div className='px-8 my-5'>
 					<h3 className='text-normal  font-bree text-white'>
