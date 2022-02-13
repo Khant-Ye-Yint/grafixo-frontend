@@ -65,7 +65,7 @@ module.exports = {
 			},
 			spacing: {
 				vh10: '10vh',
-				mlg: '63rem',
+				mlg: '71rem',
 				mmd: '40rem',
 			},
 			boxShadow: {

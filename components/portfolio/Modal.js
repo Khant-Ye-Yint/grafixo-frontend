@@ -35,7 +35,7 @@ function Modal({ modalShow, setModalShow }) {
 	const modalContent = modalShow ? (
 		<div className='fixed top-0 left-0 bottom-0 right-0 w-full h-full flex justify-center items-center bg-black z-50 bg-opacity-80'>
 			<div
-				className=' bg-darkGray text-black tracking-wide lg:w-mlg md:w-mmd w-72'
+				className=' bg-darkGray text-black tracking-wide lg:w-mlg md:w-mmd w-80'
 				ref={modalRef}
 			>
 				<div className='flex flex-row justify-between items-center px-8 my-4'>
@@ -54,7 +54,7 @@ function Modal({ modalShow, setModalShow }) {
 						device === 'laptop'
 							? '40rem'
 							: device === 'phone'
-							? '14rem'
+							? '12rem'
 							: '23rem'
 					}
 					controls
