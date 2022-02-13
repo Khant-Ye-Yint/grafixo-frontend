@@ -48,7 +48,7 @@ function Modal({ modalShow, setModalShow }) {
 					</button>
 				</div>
 				<ReactPlayer
-					url={'https://youtu.be/QLSnkSIhvJQ'}
+					url={'https://www.youtube.com/watch?v=_xKCwzgI68s'}
 					width='full'
 					height={
 						device === 'laptop'
