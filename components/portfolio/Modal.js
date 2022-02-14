@@ -1,16 +1,14 @@
 import React, { useEffect, useState, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import ReactPlayer from 'react-player/youtube';
+import Media from 'react-media';
 
 import { CgClose } from 'react-icons/cg';
-
-import useDevice from '../../hooks/useDevice';
 
 function Modal({ modalShow, setModalShow }) {
 	const [isBrowser, setIsBrowser] = useState(false);
 	const modalRef = useRef(null);
-
-	const device = useDevice();
+	const squareModal = true;
 
 	useEffect(() => {
 		setIsBrowser(true);
@@ -32,10 +30,31 @@ function Modal({ modalShow, setModalShow }) {
 		}
 	});
 
+	const YoutubePlayer = ({ matches }) =>
+		squareModal ? (
+			<ReactPlayer
+				url={'https://www.youtube.com/watch?v=_xKCwzgI68s'}
+				width='full'
+				height={matches.large ? '40rem' : matches.medium ? '40rem' : '20rem'}
+				controls
+				playing
+			/>
+		) : (
+			<ReactPlayer
+				url={'https://www.youtube.com/watch?v=34Ig3X59_qA'}
+				width='full'
+				height={matches.large ? '40rem' : matches.medium ? '23rem' : '12rem'}
+				controls
+				playing
+			/>
+		);
+
 	const modalContent = modalShow ? (
 		<div className='fixed top-0 left-0 bottom-0 right-0 w-full h-full flex justify-center items-center bg-black z-50 bg-opacity-80'>
 			<div
-				className=' bg-darkGray text-black tracking-wide lg:w-mlg md:w-mmd w-80'
+				className={`bg-darkGray text-black tracking-wide ${
+					squareModal ? 'lg:w-mlg md:w-mmd w-80' : 'lg:w-mlg md:w-mmd w-80'
+				}`}
 				ref={modalRef}
 			>
 				<div className='flex flex-row justify-between items-center px-8 my-4'>
@@ -47,19 +66,15 @@ function Modal({ modalShow, setModalShow }) {
 						<CgClose />
 					</button>
 				</div>
-				<ReactPlayer
-					url={'https://www.youtube.com/watch?v=_xKCwzgI68s'}
-					width='full'
-					height={
-						device === 'laptop'
-							? '40rem'
-							: device === 'phone'
-							? '12rem'
-							: '23rem'
-					}
-					controls
-					playing
-				/>
+				<Media
+					queries={{
+						small: '(max-width: 599px)',
+						medium: '(min-width: 600px) and (max-width: 1199px)',
+						large: '(min-width: 1200px)',
+					}}
+				>
+					{(matches) => <YoutubePlayer matches={matches} />}
+				</Media>
 				<div className='px-8 my-5'>
 					<h3 className='text-normal  font-bree text-white'>
 						Company - Astra Shark

@@ -42,7 +42,7 @@ module.exports = {
 			padding: {
 				contain: '7.5rem',
 				tabletContain: '3rem',
-				phone: '1.25rem',
+				phone: '1.5rem',
 				footer: '20rem',
 			},
 			width: {

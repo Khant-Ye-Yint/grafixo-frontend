@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-import useDevice from '../../hooks/useDevice';
 import useScrollControl from '../../hooks/useScrollControl';
 
 import Modal from './Modal';
@@ -9,7 +8,6 @@ const Card = ({ imgSrc, imgAlt }) => {
 	const [hover, setHover] = useState(false);
 	const [modalShow, setModalShow] = useState(false);
 
-	const device = useDevice();
 	const { allowScroll, preventScroll } = useScrollControl();
 
 	useEffect(() => {
@@ -25,9 +23,7 @@ const Card = ({ imgSrc, imgAlt }) => {
 				onClick={() => setModalShow(true)}
 			>
 				<div
-					className={`w-full h-full z-20 text-white flex flex-col justify-center items-center space-y-5 opacity-0 hover:opacity-100 bg-black bg-opacity-0 hover:bg-opacity-40 transition ease-in-out duration-500 ${
-						device !== 'laptop' && 'opacity-100 bg-opacity-40'
-					}`}
+					className={`w-full h-full z-20 text-white flex flex-col justify-center items-center space-y-5  hover:opacity-100 bg-black  hover:bg-opacity-40 transition ease-in-out duration-500 opacity-100 bg-opacity-40`}
 				>
 					<h1 className='text-white font-montserrat font-bold laptop:text-3xl tablet:text-2xl phone:text-lg'>
 						Polaroid

@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-import useDevice from '../../hooks/useDevice';
+import Media from 'react-media';
 
 import Button from '../shared/Button';
 
@@ -36,8 +36,6 @@ const Service = ({ reverse, bgColor, propImg, title, para }) => {
 		notInView: { x: -400, opacity: 0 },
 	};
 
-	const device = useDevice();
-
 	return (
 		<div
 			className={` w-full laptop:px-contain laptop:py-5 tablet:p-tabletContain phone:p-phone  ${bgGradi} bg-cover bg-no-repeat flex  ${
@@ -67,16 +65,26 @@ const Service = ({ reverse, bgColor, propImg, title, para }) => {
 					<Button text='Learn more' />
 				</motion.div>
 			</div>
-			<div className='w-full tablet:h-60 laptop:h-96 phone:h-52 tablet:w-full relative '>
-				<Image
-					src={imgSrc}
-					layout='fill'
-					objectFit='contain'
-					objectPosition={`${
-						device === 'phone' ? 'center' : reverse ? 'left' : 'right'
-					}`}
-				/>
-			</div>
+			<Media
+				queries={{
+					small: '(max-width: 599px)',
+					medium: '(min-width: 600px) and (max-width: 1199px)',
+					large: '(min-width: 1200px)',
+				}}
+			>
+				{(matches) =>
+					matches.small ? null : (
+						<div className='w-full tablet:h-60 laptop:h-96 phone:h-52 tablet:w-full relative '>
+							<Image
+								src={imgSrc}
+								layout='fill'
+								objectFit='contain'
+								objectPosition={`${reverse ? 'left' : 'right'}`}
+							/>
+						</div>
+					)
+				}
+			</Media>
 		</div>
 	);
 };
