@@ -4,7 +4,7 @@ import useScrollControl from '../../hooks/useScrollControl';
 
 import Modal from './Modal';
 
-const Card = ({ imgSrc, imgAlt }) => {
+const Card = ({ data }) => {
 	const [hover, setHover] = useState(false);
 	const [modalShow, setModalShow] = useState(false);
 
@@ -26,12 +26,12 @@ const Card = ({ imgSrc, imgAlt }) => {
 					className={`w-full h-full z-20 text-white flex flex-col justify-center items-center space-y-5  hover:opacity-100 bg-black  hover:bg-opacity-40 transition ease-in-out duration-500 opacity-100 bg-opacity-40`}
 				>
 					<h1 className='text-white font-montserrat font-bold laptop:text-3xl tablet:text-2xl phone:text-lg'>
-						Polaroid
+						{data.name}
 					</h1>
 				</div>
 				<Image
-					src={imgSrc}
-					alt={imgAlt}
+					src={data.imgUrl}
+					alt={data.name}
 					layout='fill'
 					objectPosition='center'
 					objectFit='cover'
@@ -44,6 +44,7 @@ const Card = ({ imgSrc, imgAlt }) => {
 				modalShow={modalShow}
 				onClose={() => setModalShow(false)}
 				setModalShow={setModalShow}
+				data={data}
 			/>
 		</div>
 	);

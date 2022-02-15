@@ -1,14 +1,17 @@
 import React, { useEffect, useState, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import ReactPlayer from 'react-player/youtube';
+import Moment from 'react-moment';
 import Media from 'react-media';
 
 import { CgClose } from 'react-icons/cg';
 
-function Modal({ modalShow, setModalShow }) {
+function Modal({ modalShow, setModalShow, data }) {
 	const [isBrowser, setIsBrowser] = useState(false);
 	const modalRef = useRef(null);
-	const squareModal = true;
+
+	const { name, company, price, date, description, videoUrl, videoRatio } =
+		data;
 
 	useEffect(() => {
 		setIsBrowser(true);
@@ -31,9 +34,9 @@ function Modal({ modalShow, setModalShow }) {
 	});
 
 	const YoutubePlayer = ({ matches }) =>
-		squareModal ? (
+		videoRatio === '1:1' ? (
 			<ReactPlayer
-				url={'https://www.youtube.com/watch?v=_xKCwzgI68s'}
+				url={videoUrl}
 				width='full'
 				height={matches.large ? '40rem' : matches.medium ? '40rem' : '20rem'}
 				controls
@@ -41,7 +44,7 @@ function Modal({ modalShow, setModalShow }) {
 			/>
 		) : (
 			<ReactPlayer
-				url={'https://www.youtube.com/watch?v=34Ig3X59_qA'}
+				url={videoUrl}
 				width='full'
 				height={matches.large ? '40rem' : matches.medium ? '23rem' : '12rem'}
 				controls
@@ -53,12 +56,14 @@ function Modal({ modalShow, setModalShow }) {
 		<div className='fixed top-0 left-0 bottom-0 right-0 w-full h-full flex justify-center items-center bg-black z-50 bg-opacity-80'>
 			<div
 				className={`bg-darkGray text-black tracking-wide ${
-					squareModal ? 'lg:w-mlg md:w-mmd w-80' : 'lg:w-mlg md:w-mmd w-80'
+					videoRatio === '1:1'
+						? 'lg:w-mlg md:w-mmd w-80'
+						: 'lg:w-mlg md:w-mmd w-80'
 				}`}
 				ref={modalRef}
 			>
 				<div className='flex flex-row justify-between items-center px-8 my-4'>
-					<h1 className='text-xl font-bold font-bree text-primary'>Polaroid</h1>
+					<h1 className='text-xl font-bold font-bree text-primary'>{name}</h1>
 					<button
 						onClick={() => setModalShow(false)}
 						className='bold text-white hover:text-lightGray text-lg  p-1'
@@ -77,21 +82,20 @@ function Modal({ modalShow, setModalShow }) {
 				</Media>
 				<div className='px-8 my-5'>
 					<h3 className='text-normal  font-bree text-white'>
-						Company - Astra Shark
+						Company - <span className='text-primary'>{company}</span>
 					</h3>
 					<span className='text-testamonial font-montserrat text-green-300 font-bold'>
-						$ 300
+						$ {price}
 					</span>
 					<br />
-					<span className='text-testamonial font-montserrat text-lightGray'>
-						3 June, 2021
-					</span>
+					<Moment
+						className='text-testamonial font-montserrat text-lightGray'
+						format='YYYY/MM/DD'
+						date={date}
+					/>
+
 					<p className='text-testamonial font-montserrat text-white mt-3'>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-						laoreet a massa, risus. At felis, posuere eu pretium. Aliquet mauris
-						massa mattis id. Sed vitae felis ac vestibulum. Mattis velit
-						sagittis pulvinar at ante ultricies. Molestie metus non vitae leo
-						leo consectetur consequat. Non aenean eget volutpat turpis.
+						{description}
 					</p>
 				</div>
 			</div>
