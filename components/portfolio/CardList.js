@@ -61,7 +61,7 @@ const CardList = ({ currentCategory }) => {
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
-		if (currentCategory === 'all') {
+		if (currentCategory === 'All') {
 			setFilteredData(dummyData);
 			setLoading(false);
 		}
