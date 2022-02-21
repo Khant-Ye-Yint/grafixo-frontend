@@ -12,7 +12,11 @@ import CameraImg from '../../public/images/camera.png';
 import SewingMImg from '../../public/images/sewingMachine.png';
 
 const Service = ({ reverse, bgColor, propImg, title, para }) => {
-	const bgGradi = bgColor === 'red' ? 'bg-redGradi' : 'blue' && 'bg-blueGradi';
+	// const bgGradi = bgColor === 'red' ? 'bg-redGradi' : 'blue' && 'bg-blueGradi';
+	const bgGradi =
+		bgColor === 'red'
+			? 'from-red-600 to-red-800'
+			: 'blue' && 'from-blue-600 to-blue-800';
 	let imgSrc;
 
 	switch (propImg) {
@@ -38,7 +42,7 @@ const Service = ({ reverse, bgColor, propImg, title, para }) => {
 
 	return (
 		<div
-			className={` w-full laptop:px-contain laptop:py-5 tablet:p-tabletContain phone:p-phone  ${bgGradi} bg-cover bg-no-repeat flex  ${
+			className={` w-full laptop:px-contain laptop:py-5 tablet:p-tabletContain phone:p-phone   bg-gradient-to-l ${bgGradi} bg-cover bg-no-repeat flex  ${
 				reverse
 					? 'laptop:flex-row-reverse tablet:flex-row-reverse phone:flex-col'
 					: 'laptop:flex-row tablet:flex-row phone:flex-col'
@@ -59,7 +63,7 @@ const Service = ({ reverse, bgColor, propImg, title, para }) => {
 					<h1 className='text-larger phone:text-large text-primary font-bree text-shadow'>
 						{title}
 					</h1>
-					<p className='laptop:text-normal desktop:text-medium font-montserrat text-lightGray w-2/3 phone:w-full'>
+					<p className='laptop:text-normal desktop:text-medium font-montserrat text-white w-2/3 phone:w-full'>
 						{para}
 					</p>
 					<Button text='Learn more' />

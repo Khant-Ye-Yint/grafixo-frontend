@@ -18,9 +18,11 @@ module.exports = {
 				testamonial: '0.85rem',
 				small: '0.75rem',
 			},
-			color: {
+			colors: {
 				primary: '#EC6961',
 				whiteText: '#DDDDDD',
+				redGradiDark: '#ea580c',
+				redGradiLight: '#f59e0b',
 			},
 			ringColor: {
 				primary: '#EC6961',
@@ -30,6 +32,8 @@ module.exports = {
 				primary: '#EC6961',
 				whiteText: '#DDDDDD',
 				darkGray: '#202020',
+				redGradiDark: '#9a3412',
+				redGradiLight: '#f59e0b',
 			},
 			textColor: {
 				primary: '#EC6961',
@@ -79,6 +83,7 @@ module.exports = {
 				heroBg: 'url(/images/tempBg.png)',
 				bubblePattern: 'url(/images/doubleBubble.png)',
 				darkBg: 'url(/images/darkBg.png)',
+				bgNebula: 'url(/images/nebula.jpg)',
 			},
 			backdropFilter: ['hover', 'focus'],
 			screens: {
