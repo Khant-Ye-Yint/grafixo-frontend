@@ -21,8 +21,14 @@ module.exports = {
 			colors: {
 				primary: '#EC6961',
 				whiteText: '#DDDDDD',
-				redGradiDark: '#ea580c',
-				redGradiLight: '#f59e0b',
+				redLeft: '#760000',
+				redRight: '#340003',
+				blueLeft: '#01084A',
+				blueRight: '#004788',
+				tealLeft: '#006167',
+				tealRight: '#002F39',
+				orangeLeft: '#4A1B00',
+				orangeRight: '#794100',
 			},
 			ringColor: {
 				primary: '#EC6961',

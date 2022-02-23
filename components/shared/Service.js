@@ -2,37 +2,10 @@ import Image from 'next/image';
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-
 import Media from 'react-media';
-
 import Button from '../shared/Button';
 
-import LaptopImg from '../../public/images/laptop.png';
-import CameraImg from '../../public/images/camera.png';
-import SewingMImg from '../../public/images/sewingMachine.png';
-
-const Service = ({ reverse, bgColor, propImg, title, para }) => {
-	// const bgGradi = bgColor === 'red' ? 'bg-redGradi' : 'blue' && 'bg-blueGradi';
-	const bgGradi =
-		bgColor === 'red'
-			? 'from-red-600 to-red-800'
-			: 'blue' && 'from-blue-600 to-blue-800';
-	let imgSrc;
-
-	switch (propImg) {
-		case 'laptop':
-			imgSrc = LaptopImg;
-			break;
-		case 'camera':
-			imgSrc = CameraImg;
-			break;
-		case 'sewingM':
-			imgSrc = SewingMImg;
-			break;
-		default:
-			imgSrc = LaptopImg;
-	}
-
+const Service = ({ reverse, img, title, para, bgClass }) => {
 	const { ref, inView } = useInView();
 
 	const variants = {
@@ -42,11 +15,11 @@ const Service = ({ reverse, bgColor, propImg, title, para }) => {
 
 	return (
 		<div
-			className={` w-full laptop:px-contain laptop:py-5 tablet:p-tabletContain phone:p-phone   bg-gradient-to-l ${bgGradi} bg-cover bg-no-repeat flex  ${
+			className={` w-full laptop:px-contain laptop:py-5 tablet:p-tabletContain phone:p-phone flex bg-gradient-to-r  ${
 				reverse
 					? 'laptop:flex-row-reverse tablet:flex-row-reverse phone:flex-col'
 					: 'laptop:flex-row tablet:flex-row phone:flex-col'
-			} justify-between items-center laptop:space-y-0 tablet:space-y-10 phone:space-y-10`}
+			} justify-between items-center laptop:space-y-0 tablet:space-y-10 phone:space-y-10 ${bgClass}`}
 		>
 			<div ref={ref} className='w-full tablet:w-full'>
 				<motion.div
@@ -80,7 +53,7 @@ const Service = ({ reverse, bgColor, propImg, title, para }) => {
 					matches.small ? null : (
 						<div className='w-full tablet:h-60 laptop:h-96 phone:h-52 tablet:w-full relative '>
 							<Image
-								src={imgSrc}
+								src={img}
 								layout='fill'
 								objectFit='contain'
 								objectPosition={`${reverse ? 'left' : 'right'}`}
