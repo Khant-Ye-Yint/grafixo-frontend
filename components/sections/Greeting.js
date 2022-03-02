@@ -7,7 +7,7 @@ const Greeting = () => {
 		<ParallaxBanner
 			layers={[
 				{
-					image: '/images/darkBg.png',
+					image: '/images/background/darkBg.png',
 					amount: 0.8,
 					expended: true,
 				},

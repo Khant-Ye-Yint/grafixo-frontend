@@ -11,8 +11,8 @@ import TwitterLogo from '../../public/images/logo/twitter.png';
 
 const Footer = () => {
 	return (
-		<div className='w-full grid place-items-center  bg-darkGray laptop:pt-contain laptop:px-footer tablet:pt-tabletContain tablet:px-tabletContain phone:px-phone phone:pt-10 text-lightGray font-montserrat relative'>
-			<div className='flex tablet:w-full phone:w-2/3 tablet:flex-row tablet:justify-between laptop:flex-row phone:flex-col items-start laptop:justify-between laptop:items-center phone:space-y-16 laptop:space-y-0 tablet:space-y-0 '>
+		<div className='w-full grid place-items-center  bg-darkGray  laptop:px-footer tablet:pt-tabletContain tablet:px-tabletContain phone:px-phone phone:pt-10 text-lightGray font-montserrat relative'>
+			<div className='flex tablet:w-full phone:w-2/3 tablet:flex-row  tablet:justify-between laptop:flex-row phone:flex-col items-start laptop:justify-between laptop:items-center phone:space-y-16 laptop:space-y-0 tablet:space-y-0 '>
 				<div className='flex flex-col space-y-2'>
 					<Link href='/'>
 						<div className='h-10 w-full relative cursor-pointer'>

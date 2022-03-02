@@ -27,7 +27,7 @@ const portfolio = () => {
 	return (
 		<Layout>
 			<div className=' bg-darkGray w-full min-h-vh100'>
-				<div className='pt-vh10 bg-bubblePattern pb-6'>
+				<div className='pt-vh10 bg-portfolioBg pb-6'>
 					<div className='w-full h-72 phone:h-58 flex justify-center items-center'>
 						<h1 className='text-white tablet:text-5xl phone:text-4xl  font-bree z-10'>
 							Portfolio

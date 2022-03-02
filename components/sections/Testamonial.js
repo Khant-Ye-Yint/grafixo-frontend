@@ -20,17 +20,17 @@ const Testamonial = () => {
 		<ParallaxBanner
 			layers={[
 				{
-					image: '/images/constellation.png',
+					image: '/images/background/review.png',
 					amount: 0.5,
 					expended: true,
 				},
 			]}
 			style={{ height: 'auto' }}
 		>
-			<div className='w-full laptop:p-contain tablet:p-tabletContain laptop:space-y-24 tablet:space-y-14 phone:p-phone phone:space-y-10 flex flex-col justify-center items-center '>
+			<div className='w-full  tablet:p-tabletContain  tablet:space-y-10 phone:p-phone phone:space-y-10 flex flex-col justify-center items-center bg-white'>
 				<div className='flex flex-col items-center z-10'>
-					<h1 className='text-large phone:text-large text-primary font-bree text-center mb-3'>
-						What Clients Say About Us
+					<h1 className='text-large phone:text-large text-white shadow-2xl font-bree text-center mb-3'>
+						Reviews
 					</h1>
 					<AnimatedLine />
 				</div>
@@ -74,7 +74,6 @@ const Testamonial = () => {
 								company='J Tech'
 								name='James'
 								text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquet adipiscing quam justo. Felis maecenas sit pharetra, quis nulla diam sit ut id. '
-								imgSrc={Avatar1}
 							/>
 						</SwiperSlide>
 						<SwiperSlide className='grid place-items-center'>
@@ -82,7 +81,6 @@ const Testamonial = () => {
 								company='J Tech'
 								name='James'
 								text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquet adipiscing quam justo. Felis maecenas sit pharetra, quis nulla diam sit ut id. '
-								imgSrc={Avatar2}
 							/>
 						</SwiperSlide>
 						<SwiperSlide className='grid place-items-center'>
@@ -90,7 +88,6 @@ const Testamonial = () => {
 								company='J Tech'
 								name='James'
 								text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquet adipiscing quam justo. Felis maecenas sit pharetra, quis nulla diam sit ut id. '
-								imgSrc={Avatar3}
 							/>
 						</SwiperSlide>
 						<SwiperSlide className='grid place-items-center'>
@@ -98,7 +95,6 @@ const Testamonial = () => {
 								company='J Tech'
 								name='James'
 								text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquet adipiscing quam justo. Felis maecenas sit pharetra, quis nulla diam sit ut id. '
-								imgSrc={Avatar2}
 							/>
 						</SwiperSlide>
 					</Swiper>

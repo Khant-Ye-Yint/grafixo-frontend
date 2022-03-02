@@ -50,7 +50,7 @@ module.exports = {
 				primary: '#EC6961',
 			},
 			padding: {
-				contain: '7.5rem',
+				contain: '6.5rem',
 				tabletContain: '3rem',
 				phone: '1.5rem',
 				footer: '20rem',
@@ -67,6 +67,7 @@ module.exports = {
 				section: '32rem',
 				bigSection: '56rem',
 				bigCard: '600px',
+				lg: '50rem',
 			},
 			minHeight: {
 				vh50: '50vh',
@@ -84,12 +85,10 @@ module.exports = {
 				none: 'none',
 			},
 			backgroundImage: {
-				blueGradi: 'url(/images/gradientBlue.png)',
-				redGradi: 'url(/images/gradientRed.png)',
-				heroBg: 'url(/images/tempBg.png)',
-				bubblePattern: 'url(/images/doubleBubble.png)',
-				darkBg: 'url(/images/darkBg.png)',
-				bgNebula: 'url(/images/nebula.jpg)',
+				bubblePattern: 'url(/images/background/doubleBubble.png)',
+				testamonialBg: 'url(/images/background/review.png)',
+				darkBg: 'url(/images/background/darkBg.png)',
+				portfolioBg: 'url(/images/background/portfolioBg.png)',
 			},
 			backdropFilter: ['hover', 'focus'],
 			screens: {
