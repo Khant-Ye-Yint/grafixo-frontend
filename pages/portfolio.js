@@ -3,7 +3,7 @@ import { useState } from 'react';
 import CardList from '../components/portfolio/CardList';
 import Layout from '../components/shared/Layout';
 
-const portfolio = () => {
+const portfolio = ({ data }) => {
 	const Categories = {
 		all: 'All',
 		rendering: '3D Rendering',
