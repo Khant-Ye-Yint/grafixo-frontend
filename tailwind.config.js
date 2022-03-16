@@ -57,6 +57,12 @@ module.exports = {
 			},
 			width: {
 				sectionImg: '950px',
+				vidLg: '40rem',
+				vidMd: '23rem',
+				vidSm: '12rem',
+				vidALg: '60rem',
+				vidAMd: '40rem',
+				vidASm: '20rem',
 			},
 			height: {
 				vh10: '10vh',
@@ -68,6 +74,15 @@ module.exports = {
 				bigSection: '56rem',
 				bigCard: '600px',
 				lg: '50rem',
+				vidLg: '40rem',
+				vidMd: '23rem',
+				vidSm: '13rem',
+				vidALg: '34rem',
+				vidAMd: '23rem',
+				vidASm: '11rem',
+			},
+			maxWidth: {
+				vidLg: '50rem',
 			},
 			minHeight: {
 				vh50: '50vh',

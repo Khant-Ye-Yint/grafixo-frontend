@@ -28,8 +28,10 @@ const portfolio = ({ data }) => {
 						imgUrls: data.imgUrls,
 					}}
 					onSubmit={async (values, { setSubmitting }) => {
-						// const imgArray = values.imgUrls.split(',');
+						// const imgString = values.imgUrls.join(',');
+						// const imgArray = imgString.split(',');
 						// values.imgUrls = imgArray;
+						// console.log(imgArray);
 						await axios.patch(
 							`http://localhost:5000/api/projects/${pid}`,
 							values

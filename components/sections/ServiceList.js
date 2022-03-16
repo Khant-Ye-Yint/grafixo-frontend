@@ -10,27 +10,31 @@ const ServiceList = () => {
 		<div>
 			<Service
 				title='3D Modeling'
-				para='We offer high-quality product animation service for commercial and presentation.'
+				para='We create highly detailed and cleaned 3D models
+				for 3D Printing, Game Assets, etc.'
 				img={CameraImg}
 				reverse
 				bgClass='from-redLeft to-redRight'
 			/>
 			<Service
 				title='3D Rendering'
-				para='We offer high quality and photorealistic 3D modeling and rendering services for commercial and 3D printing.'
+				para='We create high quality and photorealistic 3D renderings 
+				for Commercial, Pre-Visualization. etc.'
 				img={LaptopImg}
 				bgClass='from-blueLeft to-blueRight'
 			/>
 			<Service
 				reverse
 				title='3D Product Animation'
-				para='We offer high-quality product animation service for commercial and presentation.'
+				para='We create high quality and photorealistic 3D renderings 
+				for Commercial, Pre-Visualization. etc.'
 				img={CompImg}
 				bgClass='from-tealLeft to-tealRight'
 			/>
 			<Service
-				title='3D Product Animation'
-				para='We create short animation to put on your social media like facebook and instagram.'
+				title='2D/3D Promotional Animation'
+				para='We create short animations to post on your Website 
+				or Social Media like facebook and instagram, etc.'
 				img={WashingMImg}
 				bgClass='from-orangeLeft to-orangeRight'
 			/>

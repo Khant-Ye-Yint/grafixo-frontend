@@ -39,7 +39,7 @@ const Card = ({ data }) => {
 							} transition ease-in-out duration-500 opacity-100 bg-opacity-40`}
 						>
 							<h1
-								className={`text-white font-montserrat font-bold laptop:text-3xl tablet:text-2xl phone:text-lg ${
+								className={`text-white font-montserrat font-bold laptop:text-3xl tablet:text-2xl phone:text-lg p-5 ${
 									matches.large && !hover && 'opacity-0'
 								} ${
 									matches.large && hover && 'opacity-100'
@@ -48,8 +48,9 @@ const Card = ({ data }) => {
 								{data.name}
 							</h1>
 						</div>
+						<h1>{data.imgUrl}</h1>
 						<Image
-							src={data.imgUrl}
+							src={data.thumbnailUrl}
 							alt={data.name}
 							layout='fill'
 							objectPosition='center'

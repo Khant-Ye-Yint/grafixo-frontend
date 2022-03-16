@@ -1,13 +1,19 @@
 import { useState } from 'react';
+import axios from 'axios';
 
 import CardList from '../components/portfolio/CardList';
 import Layout from '../components/shared/Layout';
 
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 const portfolio = ({ data }) => {
 	const Categories = {
-		all: 'All',
-		rendering: '3D Rendering',
-		animation: '3D Animation',
+		all: 'all',
+		modeling: 'modeling',
+		rendering: 'rendering',
+		animation: 'animation',
 	};
 
 	const [currentCategory, setCurrentCategory] = useState(Categories.all);
@@ -37,15 +43,26 @@ const portfolio = ({ data }) => {
 					<div className='w-full flex justify-center items-center h-10'>
 						<ul className='text-gray-400 text-xl flex flex-row flex-wrap space-x-7 laptop:mx-contain phone:mx-5 px-3 py-1 justify-between items-center bg-gray-200 bg-opacity-10'>
 							<List text='All' category={Categories.all} />
+							<List text='3D Modeling' category={Categories.modeling} />
 							<List text='3D Rendering' category={Categories.rendering} />
 							<List text='3D Animation' category={Categories.animation} />
 						</ul>
 					</div>
 				</div>
-				<CardList currentCategory={currentCategory} />
+				<CardList currentCategory={currentCategory} data={data} />
 			</div>
 		</Layout>
 	);
 };
+
+export async function getServerSideProps() {
+	// Fetch data from external API
+
+	const res = await axios.get('http://localhost:5000/api/projects');
+	const data = await res.data;
+
+	// Pass data to the page via props
+	return { props: { data } };
+}
 
 export default portfolio;

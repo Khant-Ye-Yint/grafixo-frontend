@@ -24,8 +24,6 @@ const add = () => {
 						imgUrls: '',
 					}}
 					onSubmit={async (values, { setSubmitting }) => {
-						const imgArray = values.imgUrls.split(',');
-						values.imgUrls = imgArray;
 						axios
 							.post(`http://localhost:5000/api/projects`, values)
 							.then(() => {

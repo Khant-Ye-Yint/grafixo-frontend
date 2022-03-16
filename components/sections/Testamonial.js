@@ -2,9 +2,9 @@ import TestamonialCard from '../shared/TestamonialCard';
 import AnimatedLine from '../shared/AnimatedLine';
 import { ParallaxBanner } from 'react-scroll-parallax';
 
-import Avatar1 from '../../public/images/testamonial/avatar.png';
-import Avatar2 from '../../public/images/testamonial/avatar2.png';
-import Avatar3 from '../../public/images/testamonial/avatar3.png';
+// import Avatar1 from '../../public/images/testamonial/avatar.png';
+// import Avatar2 from '../../public/images/testamonial/avatar2.png';
+// import Avatar3 from '../../public/images/testamonial/avatar3.png';
 
 import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';

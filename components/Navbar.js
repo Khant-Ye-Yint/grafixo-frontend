@@ -2,12 +2,12 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import useAuth from '../hooks/useAuth';
+//import useAuth from '../hooks/useAuth';
 import useScrollControl from '../hooks/useScrollControl';
 
 import Logo from '../public/images/logo/GrafixoLogo.png';
 import NavDropdown from './shared/NavDropdown';
-import LogoutButton from './shared/LogoutButton';
+//import LogoutButton from './shared/LogoutButton';
 import { motion } from 'framer-motion';
 import Media from 'react-media';
 
@@ -18,7 +18,7 @@ const Navbar = () => {
 	const [show, setShow] = useState(false);
 
 	const { allowScroll, preventScroll } = useScrollControl();
-	const { isAuth } = useAuth();
+	//const { isAuth } = useAuth();
 
 	useEffect(() => {
 		if (typeof window !== 'undefined') {
@@ -108,7 +108,7 @@ const Navbar = () => {
 			<li className='navLink'>
 				<Link href='/contact'>Contact us</Link>
 			</li>
-			{isAuth && <LogoutButton text='Logout' />}
+			{/* {isAuth && <LogoutButton text='Logout' />} */}
 		</ul>
 	);
 
