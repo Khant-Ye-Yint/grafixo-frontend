@@ -29,7 +29,7 @@ const Testamonial = () => {
 		>
 			<div className='w-full  tablet:p-tabletContain  tablet:space-y-10 phone:p-phone phone:space-y-10 flex flex-col justify-center items-center bg-white'>
 				<div className='flex flex-col items-center z-10'>
-					<h1 className='text-large phone:text-large text-white shadow-2xl font-bree text-center mb-3'>
+					<h1 className='text-large phone:text-large text-white  font-bree text-center mb-3'>
 						Reviews
 					</h1>
 					<AnimatedLine />

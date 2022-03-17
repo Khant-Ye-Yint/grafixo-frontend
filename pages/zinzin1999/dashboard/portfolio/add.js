@@ -1,13 +1,11 @@
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import axios from 'axios';
-import moment from 'moment';
 import { useRouter } from 'next/router';
 
 import DashboardNav from '../../../../components/DashboardNav';
 
-const portfolio = ({ data }) => {
+const add = () => {
 	const router = useRouter();
-	const { pid } = router.query;
 
 	return (
 		<div className='min-h-screen bg-gray-800 text-black'>
@@ -15,50 +13,31 @@ const portfolio = ({ data }) => {
 			<div className='flex py-10 items-center justify-center'>
 				<Formik
 					initialValues={{
-						id: data._id,
-						name: data.name,
-						client: data.client,
-						price: data.price,
-						category: data.category,
-						description: data.description,
-						date: data.date,
-						featured: data.featured,
-						vidUrl: data.vidUrl,
-						thumbnailUrl: data.thumbnailUrl,
-						imgUrls: data.imgUrls,
+						name: '',
+						client: '',
+						price: 0,
+						category: 'rendering',
+						description: '',
+						featured: false,
+						vidUrl: '',
+						thumbnailUrl: '',
+						imgUrls: '',
 					}}
 					onSubmit={async (values, { setSubmitting }) => {
-						// const imgString = values.imgUrls.join(',');
-						// const imgArray = imgString.split(',');
-						// values.imgUrls = imgArray;
-						// console.log(imgArray);
-						await axios.patch(
-							`http://localhost:5000/api/projects/${pid}`,
-							values
-						);
-						router.push('/admin/dashboard');
-						setSubmitting(false);
+						axios
+							.post(
+								`https://grafixo-backend.herokuapp.com/api/projects`,
+								values
+							)
+							.then(() => {
+								router.push('/admin/dashboard');
+								setSubmitting(false);
+							})
+							.catch((err) => console.error(err));
 					}}
 				>
 					{({ isSubmitting }) => (
 						<Form className='bg-gray-900 w-1/3  p-10 flex flex-col items-center space-y-5'>
-							<div className='inputContainer'>
-								<div>
-									<label
-										className='text-lg text-white font-bree cursor-pointer'
-										htmlFor='id'
-									>
-										ID
-									</label>
-								</div>
-								<Field
-									type='text'
-									name='id'
-									id='id'
-									className='input'
-									readOnly
-								/>
-							</div>
 							<div className='inputContainer'>
 								<div>
 									<label
@@ -120,24 +99,8 @@ const portfolio = ({ data }) => {
 									<option value='animation'>Animation</option>
 									<option value='rendering'>Rendering</option>
 									<option value='modeling'>Modeling</option>
+									<option value='promoAni'>Promotional Animation</option>
 								</Field>
-							</div>
-							<div className='inputContainer'>
-								<div>
-									<label
-										className='text-lg text-white font-bree cursor-pointer'
-										htmlFor='date'
-									>
-										Date
-									</label>
-								</div>
-								<Field
-									name='date'
-									id='date'
-									className='input'
-									value={moment(data.date).format('LL')}
-									readOnly
-								/>
 							</div>
 							<div className='inputContainer'>
 								<div>
@@ -155,8 +118,8 @@ const portfolio = ({ data }) => {
 									id='featured'
 									className='input'
 								>
-									<option value='true'>Yes</option>
 									<option value='false'>No</option>
+									<option value='true'>Yes</option>
 								</Field>
 							</div>
 							<div className='inputContainer'>
@@ -191,10 +154,13 @@ const portfolio = ({ data }) => {
 							<div className='inputContainer'>
 								<div>
 									<label
-										className='text-lg text-white font-bree cursor-pointer'
+										className='text-lg text-gray-100 font-bree cursor-pointer'
 										htmlFor='imgUrls'
 									>
-										Image Links
+										Image Links{' '}
+										<span className='text-sm font-normal'>
+											("Comma seperated Links")
+										</span>
 									</label>
 								</div>
 								<Field name='imgUrls' id='imgUrls' className='input' />
@@ -215,7 +181,7 @@ const portfolio = ({ data }) => {
 								/>
 							</div>
 							<button
-								className='bg-gray-500 px-2 py-1 font-bold hover:bg-gray-600 active:bg-gray-700'
+								className='bg-gray-600 text-white px-2 py-1 font-bold hover:bg-gray-700 active:bg-gray-800'
 								disabled={isSubmitting}
 								type='submit'
 							>
@@ -229,19 +195,4 @@ const portfolio = ({ data }) => {
 	);
 };
 
-export async function getServerSideProps({ params }) {
-	// Fetch necessary data for the blog post using params.id
-
-	const res = await axios.get(
-		`http://localhost:5000/api/projects/${params.pid}`
-	);
-	const data = await res.data;
-
-	return {
-		props: {
-			data: data,
-		},
-	};
-}
-
-export default portfolio;
+export default add;

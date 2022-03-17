@@ -49,7 +49,7 @@ const TableRow = ({
 				/>
 			</span>
 			<span className='flex flex-col space-y-3'>
-				<Link href={`/admin/dashboard/portfolio/${id}`}>
+				<Link href={`/zinzin1999/dashboard/portfolio/${id}`}>
 					<span className='px-3 py-1 bg-green-600 hover:bg-green-700 active:bg-green-800 cursor-pointer'>
 						Edit
 					</span>

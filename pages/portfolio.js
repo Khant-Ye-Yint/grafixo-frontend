@@ -14,17 +14,21 @@ const portfolio = ({ data }) => {
 		modeling: 'modeling',
 		rendering: 'rendering',
 		animation: 'animation',
+		promoAni: 'promoAni',
 	};
 
 	const [currentCategory, setCurrentCategory] = useState(Categories.all);
 
 	const List = ({ text, category }) => (
 		<li
-			className={`cursor-pointer text-center w-44 hover:text-white hover:border-2  font-bold px-4 py-2 ${
+			className={`cursor-pointer text-center hover:text-white hover:border-2  font-bold px-1 py-2 ${
 				category === currentCategory &&
 				'text-primary border-primary border-2 hover:text-primary'
 			}`}
 			onClick={() => setCurrentCategory(category)}
+			style={{
+				textShadow: '1px 1px 2px black',
+			}}
 		>
 			{text}
 		</li>
@@ -33,19 +37,23 @@ const portfolio = ({ data }) => {
 	return (
 		<Layout>
 			<div className=' bg-darkGray w-full min-h-vh100'>
-				<div className='pt-vh10 bg-portfolioBg pb-6'>
-					<div className='w-full h-72 phone:h-58 flex justify-center items-center'>
+				<div className='pt-vh10 bg-portfolioBg bg-center bg-no-repeat bg-cover pb-6'>
+					<div className='w-full h-72 phone:h-48 phone:h-58 flex justify-center items-center'>
 						<h1 className='text-white tablet:text-5xl phone:text-4xl  font-bree z-10'>
 							Portfolio
 						</h1>
 						{/* <div className='absolute w-full h-full backdrop-filter backdrop-blur-sm'></div> */}
 					</div>
-					<div className='w-full flex justify-center items-center h-10'>
-						<ul className='text-gray-400 text-xl flex flex-row flex-wrap space-x-7 laptop:mx-contain phone:mx-5 px-3 py-1 justify-between items-center bg-gray-200 bg-opacity-10'>
+					<div className='w-full flex justify-center items-center'>
+						<ul className='text-gray-200 text-xl phone:text-lg laptop:mx-contain phone:mx-5 bg-gray-200 bg-opacity-10 grid phone:grid-cols-2 laptop:grid-cols-5'>
 							<List text='All' category={Categories.all} />
 							<List text='3D Modeling' category={Categories.modeling} />
 							<List text='3D Rendering' category={Categories.rendering} />
 							<List text='3D Animation' category={Categories.animation} />
+							<List
+								text='Promotional Animation'
+								category={Categories.promoAni}
+							/>
 						</ul>
 					</div>
 				</div>
@@ -58,7 +66,9 @@ const portfolio = ({ data }) => {
 export async function getServerSideProps() {
 	// Fetch data from external API
 
-	const res = await axios.get('http://localhost:5000/api/projects');
+	const res = await axios.get(
+		`https://grafixo-backend.herokuapp.com/api/projects`
+	);
 	const data = await res.data;
 
 	// Pass data to the page via props

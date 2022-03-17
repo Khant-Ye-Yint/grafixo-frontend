@@ -77,6 +77,10 @@ const CardList = ({ currentCategory, data }) => {
 			const newData = data.filter((data) => data.category === currentCategory);
 			setFilteredData(newData);
 		}
+		if (currentCategory === 'promoAni') {
+			const newData = data.filter((data) => data.category === currentCategory);
+			setFilteredData(newData);
+		}
 		setLoading(false);
 	}, [currentCategory]);
 

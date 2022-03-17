@@ -73,15 +73,15 @@ const Navbar = () => {
 				<li>
 					<NavDropdown />
 				</li>
-				<li className='navLink'>
-					<Link href='/portfolio'>Portfolio</Link>
-				</li>
-				<li className='navLink'>
-					<Link href='/about'>About us</Link>
-				</li>
-				<li className='navLink'>
-					<Link href='/contact'>Contact us</Link>
-				</li>
+				<Link href='/portfolio'>
+					<li className='navLink'>Portfolio</li>
+				</Link>
+				<Link href='/about'>
+					<li className='navLink'>About us</li>
+				</Link>
+				<Link href='/contact'>
+					<li className='navLink'>Contact us</li>
+				</Link>
 				<XIcon
 					width={25}
 					height={25}
@@ -99,15 +99,15 @@ const Navbar = () => {
 				{' '}
 				<NavDropdown />{' '}
 			</li>
-			<li className='navLink'>
-				<Link href='/portfolio'>Portfolio</Link>
-			</li>
-			<li className='navLink'>
-				<Link href='/about'>About us</Link>
-			</li>
-			<li className='navLink'>
-				<Link href='/contact'>Contact us</Link>
-			</li>
+			<Link href='/portfolio'>
+				<li className='navLink'>Portfolio</li>
+			</Link>
+			<Link href='/about'>
+				<li className='navLink'>About us</li>
+			</Link>
+			<Link href='/contact'>
+				<li className='navLink'>Contact us</li>
+			</Link>
 			{/* {isAuth && <LogoutButton text='Logout' />} */}
 		</ul>
 	);
@@ -118,7 +118,7 @@ const Navbar = () => {
 				showBg ? 'bg-black' : 'bg-transparent'
 			}  bg-opacity-70 tablet:px-tabletContain laptop:px-contain phone:px-5 flex flex-row justify-between items-center fixed tablet:fixed top-0 z-40 transition duration-1000 ease-in-out`}
 		>
-			<div className='cursor-pointer relative h-12 w-1/4 phone:w-2/5'>
+			<div className='cursor-pointer relative h-12 w-1/4 phone:w-2/5 '>
 				<Link href='/'>
 					<Image
 						priority

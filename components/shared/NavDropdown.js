@@ -22,10 +22,12 @@ const NavDropdown = () => {
 
 	const categories = [
 		{
-			name: '3D Modeling And Rendering',
+			name: '3D Modeling',
 			slug: '3D-Modeling-And-Rendering',
 		},
+		{ name: '3D Rendering', slug: '3D-Animation' },
 		{ name: '3D Animation', slug: '3D-Animation' },
+		{ name: '2D/3D Promotional Animation', slug: '3D-Animation' },
 	];
 
 	return (
@@ -71,7 +73,7 @@ const NavDropdown = () => {
 										<Menu.Item key={category}>
 											{({ active }) => (
 												<MyLink
-													href={`/services/${category.slug}`}
+													href={`/portfolio`}
 													className={`${
 														active && 'bg-white bg-opacity-20'
 													} px-2 py-1 whitespace-nowrap hover:text-white`}

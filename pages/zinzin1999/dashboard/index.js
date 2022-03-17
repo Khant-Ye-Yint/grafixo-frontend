@@ -41,7 +41,7 @@ const dashboard = ({ data }) => {
 							onClick={() => setModal(Modals.testamonial)}
 						/>
 					</div>
-					<Link href={`/admin/dashboard/${modal}/add`}>
+					<Link href={`/zinzin1999/dashboard/${modal}/add`}>
 						<span className='px-3 py-1 bg-green-600 hover:bg-green-700 active:bg-green-800 cursor-pointer mb-20'>
 							Add
 						</span>
@@ -56,7 +56,9 @@ const dashboard = ({ data }) => {
 export async function getServerSideProps() {
 	// Fetch data from external API
 
-	const res = await axios.get('http://localhost:5000/api/projects');
+	const res = await axios.get(
+		'https://grafixo-backend.herokuapp.com/api/projects'
+	);
 	const data = await res.data;
 
 	// Pass data to the page via props
