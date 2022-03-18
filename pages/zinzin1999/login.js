@@ -23,7 +23,7 @@ const login = () => {
 		const formData = { email, password };
 
 		axios
-			.post(`https://grafixo-backend.herokuapp.com/api/user/login`, formData, {
+			.post(`${process.env.SERVER_BASE_URL}/api/user/login`, formData, {
 				headers: {
 					'Content-Type': 'application/json',
 				},

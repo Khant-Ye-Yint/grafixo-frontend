@@ -47,7 +47,7 @@ import TableRow from './PortfolioRow';
 // 	},
 // ];
 
-const Table = ({ data }) => {
+const Table = ({ data, SERVER_BASE_URL }) => {
 	return (
 		<div className='flex-1 bg-gray-800 w-full h-full text-white col-span-10 '>
 			<div className='grid grid-cols-11 place-items-center h-10 font-bold bg-black text-primary font-bree'>
@@ -74,6 +74,7 @@ const Table = ({ data }) => {
 					featured={chunk.featured}
 					category={chunk.category}
 					thumbnail={chunk.thumbnailUrl}
+					SERVER_BASE_URL={SERVER_BASE_URL}
 				/>
 			))}
 		</div>

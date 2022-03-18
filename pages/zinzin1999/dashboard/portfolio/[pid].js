@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 
 import DashboardNav from '../../../../components/DashboardNav';
 
-const portfolio = ({ data }) => {
+const portfolio = ({ data, SERVER_BASE_URL }) => {
 	const router = useRouter();
 	const { pid } = router.query;
 
@@ -32,11 +32,9 @@ const portfolio = ({ data }) => {
 						// const imgArray = imgString.split(',');
 						// values.imgUrls = imgArray;
 						// console.log(imgArray);
-						await axios.patch(
-							`https://grafixo-backend.herokuapp.com/api/projects/${pid}`,
-							values
-						);
-						router.push('/admin/dashboard');
+
+						await axios.patch(`${SERVER_BASE_URL}/api/projects/${pid}`, values);
+						router.push('/zinzin1999/dashboard');
 						setSubmitting(false);
 					}}
 				>
@@ -234,13 +232,14 @@ export async function getServerSideProps({ params }) {
 	// Fetch necessary data for the blog post using params.id
 
 	const res = await axios.get(
-		`http://localhost:5000/api/projects/${params.pid}`
+		`${process.env.SERVER_BASE_URL}/api/projects/${params.pid}`
 	);
 	const data = await res.data;
 
 	return {
 		props: {
 			data: data,
+			SERVER_BASE_URL: process.env.SERVER_BASE_URL,
 		},
 	};
 }

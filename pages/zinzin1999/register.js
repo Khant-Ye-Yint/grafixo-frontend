@@ -23,15 +23,11 @@ const register = () => {
 		const formData = { name, email, password };
 
 		axios
-			.post(
-				`https://grafixo-backend.herokuapp.com/api/user/register`,
-				formData,
-				{
-					headers: {
-						'Content-Type': 'application/json',
-					},
-				}
-			)
+			.post(`${process.env.SERVER_BASE_URL}/api/user/register`, formData, {
+				headers: {
+					'Content-Type': 'application/json',
+				},
+			})
 			.then((res) => {
 				toast.success('Account created.', {
 					onClose: () => router.push('/admin/login'),

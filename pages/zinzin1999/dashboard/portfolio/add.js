@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 
 import DashboardNav from '../../../../components/DashboardNav';
 
-const add = () => {
+const add = ({ SERVER_BASE_URL }) => {
 	const router = useRouter();
 
 	return (
@@ -25,12 +25,9 @@ const add = () => {
 					}}
 					onSubmit={async (values, { setSubmitting }) => {
 						axios
-							.post(
-								`https://grafixo-backend.herokuapp.com/api/projects`,
-								values
-							)
+							.post(`${SERVER_BASE_URL}/api/projects`, values)
 							.then(() => {
-								router.push('/admin/dashboard');
+								router.push('/zinzin1999/dashboard');
 								setSubmitting(false);
 							})
 							.catch((err) => console.error(err));
@@ -194,5 +191,14 @@ const add = () => {
 		</div>
 	);
 };
+
+export async function getStaticProps() {
+	// Fetch data from external API
+
+	const SERVER_BASE_URL = process.env.SERVER_BASE_URL;
+
+	// Pass data to the page via props
+	return { props: { SERVER_BASE_URL: SERVER_BASE_URL } };
+}
 
 export default add;

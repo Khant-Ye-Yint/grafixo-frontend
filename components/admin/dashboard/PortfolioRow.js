@@ -19,6 +19,7 @@ const TableRow = ({
 	featured,
 	category,
 	thumbnail,
+	SERVER_BASE_URL,
 }) => {
 	const time = moment(date).format('LL');
 
@@ -26,7 +27,7 @@ const TableRow = ({
 	const router = useRouter();
 
 	const handleDelete = async () => {
-		await axios.delete(`http://localhost:5000/api/projects/${id}`);
+		await axios.delete(`${SERVER_BASE_URL}/api/projects/${id}`);
 		router.reload();
 	};
 

@@ -16,7 +16,7 @@ const Tab = ({ text, classN, ...rest }) => {
 	);
 };
 
-const dashboard = ({ data }) => {
+const dashboard = ({ data, SERVER_BASE_URL }) => {
 	const Modals = {
 		portfolio: 'portfolio',
 		testamonial: 'testamonial',
@@ -47,22 +47,20 @@ const dashboard = ({ data }) => {
 						</span>
 					</Link>
 				</div>
-				<PortfolioTable data={data} />
+				<PortfolioTable data={data} SERVER_BASE_URL={SERVER_BASE_URL} />
 			</div>
 		</div>
 	);
 };
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 	// Fetch data from external API
 
-	const res = await axios.get(
-		'https://grafixo-backend.herokuapp.com/api/projects'
-	);
+	const res = await axios.get(`${process.env.SERVER_BASE_URL}/api/projects`);
 	const data = await res.data;
 
 	// Pass data to the page via props
-	return { props: { data } };
+	return { props: { data, SERVER_BASE_URL: process.env.SERVER_BASE_URL } };
 }
 
 export default dashboard;

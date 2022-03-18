@@ -63,12 +63,10 @@ const portfolio = ({ data }) => {
 	);
 };
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 	// Fetch data from external API
 
-	const res = await axios.get(
-		`https://grafixo-backend.herokuapp.com/api/projects`
-	);
+	const res = await axios.get(`${process.env.SERVER_BASE_URL}/api/projects`);
 	const data = await res.data;
 
 	// Pass data to the page via props
