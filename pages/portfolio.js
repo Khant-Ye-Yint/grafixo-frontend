@@ -63,7 +63,7 @@ const portfolio = ({ data }) => {
 	);
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 	// Fetch data from external API
 
 	const res = await axios.get(`${process.env.SERVER_BASE_URL}/api/projects`);

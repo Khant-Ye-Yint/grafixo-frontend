@@ -192,7 +192,7 @@ const add = ({ SERVER_BASE_URL }) => {
 	);
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 	// Fetch data from external API
 
 	const SERVER_BASE_URL = process.env.SERVER_BASE_URL;
