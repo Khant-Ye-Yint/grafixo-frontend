@@ -29,7 +29,6 @@ function Modal({ modalShow, setModalShow, attributes }) {
 
 	useEffect(() => {
 		setIsBrowser(true);
-		console.log(imgUrls);
 	}, []);
 
 	useEffect(() => {
@@ -47,48 +46,6 @@ function Modal({ modalShow, setModalShow, attributes }) {
 			};
 		}
 	});
-
-	// const YoutubePlayer = ({ matches }) =>
-	// 	videoRatio === '1:1' ? (
-	// 		<ReactPlayer
-	// 			url={vidUrl}
-	// 			width='full'
-	// 			height={matches.large ? '40rem' : matches.medium ? '40rem' : '20rem'}
-	// 			controls
-	// 			playing
-	// 		/>
-	// 	) : (
-	// 		<ReactPlayer
-	// 			url={vidUrl}
-	// 			width='full'
-	// 			height={matches.large ? '40rem' : matches.medium ? '23rem' : '12rem'}
-	// 			controls
-	// 			playing
-	// 		/>
-	// 	);
-
-	const VimeoPlayer = ({ matches, url }) =>
-		category !== 'animation' ? (
-			<Vimeo
-				video={url}
-				//height={matches.large ? '640' : matches.medium ? '400' : '350'}
-				responsive={true}
-				controls
-				autoplay
-				onLoaded={() => setVideoLoading(false)}
-				muted
-			/>
-		) : (
-			<Vimeo
-				video={url}
-				//height={matches.large ? '640' : matches.medium ? '400' : '200'}
-				controls
-				autoplay
-				onLoaded={() => setVideoLoading(false)}
-				muted
-				responsive={true}
-			/>
-		);
 
 	const modalContent = modalShow ? (
 		<Media
