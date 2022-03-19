@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import axios from 'axios';
+
+import { createClient } from 'contentful';
 
 import CardList from '../components/portfolio/CardList';
 import Layout from '../components/shared/Layout';
@@ -64,13 +65,22 @@ const portfolio = ({ data }) => {
 };
 
 export async function getServerSideProps() {
+	const client = createClient({
+		space: process.env.CONTENTFUL_SPACE,
+		accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+	});
+
+	const res = await client.getEntries({ content_type: 'portfolio' });
+
+	return { props: { data: res.items } };
+
 	// Fetch data from external API
 
-	const res = await axios.get(`${process.env.SERVER_BASE_URL}/api/projects`);
-	const data = await res.data;
+	// const res = await axios.get(`${process.env.PORTFOLIO_ENDPOINT}`);
+	// const { data } = await res.data;
 
 	// Pass data to the page via props
-	return { props: { data } };
+	// return { props: { data } };
 }
 
 export default portfolio;

@@ -12,12 +12,13 @@ import { AiOutlineLoading } from 'react-icons/ai';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-function Modal({ modalShow, setModalShow, data }) {
+function Modal({ modalShow, setModalShow, attributes }) {
 	const [videoLoading, setVideoLoading] = useState(true);
 	const [isBrowser, setIsBrowser] = useState(false);
 	const modalRef = useRef(null);
 
-	const { name, price, date, description, vidUrl, category, imgUrls } = data;
+	const { name, price, date, description, vidUrl, category, imgUrls } =
+		attributes;
 
 	const imgArray = imgUrls.split(',');
 

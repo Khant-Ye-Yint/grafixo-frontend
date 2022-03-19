@@ -66,33 +66,38 @@ const CardList = ({ currentCategory, data }) => {
 			setLoading(false);
 		}
 		if (currentCategory === 'modeling') {
-			const newData = data.filter((data) => data.category === currentCategory);
+			const newData = data.filter(
+				(data) => data.fields.category === currentCategory
+			);
 			setFilteredData(newData);
 		}
 		if (currentCategory === 'rendering') {
-			const newData = data.filter((data) => data.category === currentCategory);
+			const newData = data.filter(
+				(data) => data.fields.category === currentCategory
+			);
 			setFilteredData(newData);
 		}
 		if (currentCategory === 'animation') {
-			const newData = data.filter((data) => data.category === currentCategory);
+			const newData = data.filter(
+				(data) => data.fields.category === currentCategory
+			);
 			setFilteredData(newData);
 		}
 		if (currentCategory === 'promoAni') {
-			const newData = data.filter((data) => data.category === currentCategory);
+			const newData = data.filter(
+				(data) => data.fields.category === currentCategory
+			);
 			setFilteredData(newData);
 		}
 		setLoading(false);
 	}, [currentCategory]);
-
-	// const reversedData = [...filteredData];
-	// reversedData.reverse();
 
 	return loading ? (
 		<span>Loading...</span>
 	) : (
 		<div className='grid laptop:grid-cols-4 tablet:grid-cols-3 phone:grid-cols-2'>
 			{filteredData.map((data) => (
-				<Card data={data} key={data.name} />
+				<Card attributes={data.fields} key={data.sys.id} />
 			))}
 		</div>
 	);

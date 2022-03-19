@@ -5,7 +5,7 @@ import Media from 'react-media';
 
 import Modal from './Modal';
 
-const Card = ({ data }) => {
+const Card = ({ attributes }) => {
 	const [hover, setHover] = useState(false);
 	const [modalShow, setModalShow] = useState(false);
 
@@ -45,13 +45,13 @@ const Card = ({ data }) => {
 									matches.large && hover && 'opacity-100'
 								} transition ease-in-out duration-700 `}
 							>
-								{data.name}
+								{attributes.name}
 							</h1>
 						</div>
-						<h1>{data.imgUrl}</h1>
+						<h1>{attributes.imgUrl}</h1>
 						<Image
-							src={data.thumbnailUrl}
-							alt={data.name}
+							src={attributes.thumbnailUrl}
+							alt={attributes.name}
 							layout='fill'
 							objectPosition='center'
 							objectFit='cover'
@@ -66,7 +66,7 @@ const Card = ({ data }) => {
 						modalShow={modalShow}
 						onClose={() => setModalShow(false)}
 						setModalShow={setModalShow}
-						data={data}
+						attributes={attributes}
 					/>
 				</div>
 			)}
