@@ -20,7 +20,7 @@ const Testamonial = () => {
 		<ParallaxBanner
 			layers={[
 				{
-					image: '/images/background/review.png',
+					image: '/images/background/review.jpg',
 					amount: 0.5,
 					expended: true,
 				},

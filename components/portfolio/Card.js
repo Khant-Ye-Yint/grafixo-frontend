@@ -39,7 +39,7 @@ const Card = ({ attributes }) => {
 							} transition ease-in-out duration-500 opacity-100 bg-opacity-40`}
 						>
 							<h1
-								className={`text-white font-montserrat font-bold laptop:text-3xl tablet:text-2xl phone:text-lg p-5 ${
+								className={`text-white text-center font-montserrat font-bold laptop:text-2xl tablet:text-2xl phone:text-lg p-5 ${
 									matches.large && !hover && 'opacity-0'
 								} ${
 									matches.large && hover && 'opacity-100'
@@ -48,7 +48,6 @@ const Card = ({ attributes }) => {
 								{attributes.name}
 							</h1>
 						</div>
-						<h1>{attributes.imgUrl}</h1>
 						<Image
 							src={attributes.thumbnailUrl}
 							alt={attributes.name}
@@ -60,6 +59,7 @@ const Card = ({ attributes }) => {
 								matches.large &&
 								'scale-125 filter blur-sm transition duration-500'
 							} transition duration-500 `}
+							priority
 						/>
 					</div>
 					<Modal

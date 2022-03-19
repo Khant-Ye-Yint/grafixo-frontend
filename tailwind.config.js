@@ -100,10 +100,9 @@ module.exports = {
 				none: 'none',
 			},
 			backgroundImage: {
-				bubblePattern: 'url(/images/background/doubleBubble.png)',
-				testamonialBg: 'url(/images/background/review.png)',
-				darkBg: 'url(/images/background/darkBg.png)',
-				portfolioBg: 'url(/images/background/portfolioBg.png)',
+				testamonialBg: 'url(/images/background/review.jpg)',
+				darkBg: 'url(/images/background/darkBg.jpg)',
+				portfolioBg: 'url(/images/background/portfolioBg.jpg)',
 			},
 			backdropFilter: ['hover', 'focus'],
 			screens: {

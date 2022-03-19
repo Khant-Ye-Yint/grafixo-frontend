@@ -68,9 +68,13 @@ export async function getServerSideProps() {
 	const client = createClient({
 		space: process.env.CONTENTFUL_SPACE,
 		accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+		ssrMode: true,
 	});
 
-	const res = await client.getEntries({ content_type: 'portfolio' });
+	const res = await client.getEntries({
+		content_type: 'portfolio',
+		order: '-fields.date',
+	});
 
 	return { props: { data: res.items } };
 
