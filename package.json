@@ -10,7 +10,6 @@
     "@heroicons/react": "^1.0.5",
     "@u-wave/react-vimeo": "^0.9.5",
     "contentful": "^9.1.18",
-    "dotenv": "^16.0.0",
     "formik": "^2.2.9",
     "framer-motion": "^5.3.0",
     "moment": "^2.29.1",
