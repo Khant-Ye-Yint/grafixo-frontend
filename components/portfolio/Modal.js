@@ -2,8 +2,8 @@ import React, { useEffect, useState, useRef } from 'react';
 import ReactDOM from 'react-dom';
 //import ReactPlayer from 'react-player/youtube';
 import Moment from 'react-moment';
-import Media from 'react-media';
 import Image from 'next/image';
+import Badge from './Badge';
 
 import Vimeo from '@u-wave/react-vimeo';
 
@@ -12,13 +12,22 @@ import { AiOutlineLoading } from 'react-icons/ai';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-function Modal({ modalShow, setModalShow, attributes }) {
+function Modal({ modalShow, setModalShow, attributes, currentCategory }) {
 	const [videoLoading, setVideoLoading] = useState(true);
 	const [isBrowser, setIsBrowser] = useState(false);
 	const modalRef = useRef(null);
 
-	const { name, client, price, date, description, vidUrl, category, imgUrls } =
-		attributes;
+	const {
+		name,
+		client,
+		price,
+		date,
+		description,
+		vidUrl,
+		imgUrls,
+		videoRatio,
+		category,
+	} = attributes;
 
 	const imgArray = imgUrls.split(',');
 
@@ -29,6 +38,7 @@ function Modal({ modalShow, setModalShow, attributes }) {
 
 	useEffect(() => {
 		setIsBrowser(true);
+		console.log(currentCategory);
 	}, []);
 
 	useEffect(() => {
@@ -51,7 +61,7 @@ function Modal({ modalShow, setModalShow, attributes }) {
 		<div className='fixed top-0 left-0 bottom-0 right-0 w-full h-full flex justify-center items-center bg-black z-50 bg-opacity-80'>
 			<div
 				className={`bg-darkGray text-black tracking-wide ${
-					category !== 'animation'
+					videoRatio !== '16:9'
 						? 'md:w-vidLg w-vidMd'
 						: 'lg:w-vidALg md:w-vidAMd w-vidASm'
 				} `}
@@ -80,10 +90,30 @@ function Modal({ modalShow, setModalShow, attributes }) {
 						'--swiper-navigation-size': '30px',
 					}}
 				>
+					{currentCategory === 'rendering'
+						? imgArray.map((img) => (
+								<SwiperSlide>
+									<div
+										className={`${
+											videoRatio !== '16:9'
+												? 'md:h-vidLg h-vidMd'
+												: 'lg:h-vidALg md:h-vidAMd h-vidASm'
+										} relative`}
+									>
+										<Image
+											src={`${img}`}
+											layout='fill'
+											objectFit='cover'
+											objectPosition='center'
+										/>
+									</div>
+								</SwiperSlide>
+						  ))
+						: null}
 					<SwiperSlide>
 						<div
 							className={`w-full ${
-								category !== 'animation'
+								videoRatio !== '16:9'
 									? 'md:h-vidLg h-vidMd'
 									: 'lg:h-vidALg md:h-vidAMd h-vidASm'
 							}  relative`}
@@ -109,26 +139,27 @@ function Modal({ modalShow, setModalShow, attributes }) {
 							)}
 						</div>
 					</SwiperSlide>
-					{imgArray.map((img) => (
-						<SwiperSlide>
-							<div
-								className={`${
-									category !== 'animation'
-										? 'md:h-vidLg h-vidMd'
-										: 'lg:h-vidALg md:h-vidAMd h-vidASm'
-								} relative`}
-							>
-								<Image
-									src={`${img}`}
-									layout='fill'
-									objectFit='cover'
-									objectPosition='center'
-								/>
-							</div>
-						</SwiperSlide>
-					))}
+					{currentCategory === 'rendering'
+						? null
+						: imgArray.map((img) => (
+								<SwiperSlide>
+									<div
+										className={`${
+											videoRatio !== '16:9'
+												? 'md:h-vidLg h-vidMd'
+												: 'lg:h-vidALg md:h-vidAMd h-vidASm'
+										} relative`}
+									>
+										<Image
+											src={`${img}`}
+											layout='fill'
+											objectFit='cover'
+											objectPosition='center'
+										/>
+									</div>
+								</SwiperSlide>
+						  ))}
 				</Swiper>
-
 				<div className='px-8 my-5'>
 					<h3 className='text-normal  font-bree text-white'>
 						Client - <span className='text-primary'>{client}</span>
@@ -146,6 +177,11 @@ function Modal({ modalShow, setModalShow, attributes }) {
 					<p className='text-testamonial font-montserrat text-white mt-3'>
 						{description}
 					</p>
+					<div className='mt-3 flex flex-row flex-wrap space-x-3'>
+						{category.map((cat) => (
+							<Badge>{cat}</Badge>
+						))}
+					</div>
 				</div>
 			</div>
 		</div>

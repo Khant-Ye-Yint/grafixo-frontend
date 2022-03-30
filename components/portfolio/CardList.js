@@ -61,31 +61,35 @@ const CardList = ({ currentCategory, data }) => {
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
+		console.log(data[0].fields.list);
+	}, []);
+
+	useEffect(() => {
 		if (currentCategory === 'all') {
 			setFilteredData(data);
 			setLoading(false);
 		}
 		if (currentCategory === 'modeling') {
-			const newData = data.filter(
-				(data) => data.fields.category === currentCategory
+			const newData = data.filter((data) =>
+				data.fields.category.includes(currentCategory)
 			);
 			setFilteredData(newData);
 		}
 		if (currentCategory === 'rendering') {
-			const newData = data.filter(
-				(data) => data.fields.category === currentCategory
+			const newData = data.filter((data) =>
+				data.fields.category.includes(currentCategory)
 			);
 			setFilteredData(newData);
 		}
 		if (currentCategory === 'animation') {
-			const newData = data.filter(
-				(data) => data.fields.category === currentCategory
+			const newData = data.filter((data) =>
+				data.fields.category.includes(currentCategory)
 			);
 			setFilteredData(newData);
 		}
 		if (currentCategory === 'promoAni') {
-			const newData = data.filter(
-				(data) => data.fields.category === currentCategory
+			const newData = data.filter((data) =>
+				data.fields.category.includes(currentCategory)
 			);
 			setFilteredData(newData);
 		}
@@ -97,7 +101,11 @@ const CardList = ({ currentCategory, data }) => {
 	) : (
 		<div className='grid laptop:grid-cols-4 tablet:grid-cols-3 phone:grid-cols-2'>
 			{filteredData.map((data) => (
-				<Card attributes={data.fields} key={data.sys.id} />
+				<Card
+					attributes={data.fields}
+					key={data.sys.id}
+					currentCategory={currentCategory}
+				/>
 			))}
 		</div>
 	);

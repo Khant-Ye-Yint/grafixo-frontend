@@ -5,7 +5,7 @@ import Media from 'react-media';
 
 import Modal from './Modal';
 
-const Card = ({ attributes }) => {
+const Card = ({ attributes, currentCategory }) => {
 	const [hover, setHover] = useState(false);
 	const [modalShow, setModalShow] = useState(false);
 
@@ -67,6 +67,7 @@ const Card = ({ attributes }) => {
 						onClose={() => setModalShow(false)}
 						setModalShow={setModalShow}
 						attributes={attributes}
+						currentCategory={currentCategory}
 					/>
 				</div>
 			)}
