@@ -74,6 +74,7 @@ export async function getServerSideProps() {
 	const res = await client.getEntries({
 		content_type: 'portfolio',
 		order: '-fields.date',
+		limit: 8,
 	});
 
 	return { props: { data: res.items } };
