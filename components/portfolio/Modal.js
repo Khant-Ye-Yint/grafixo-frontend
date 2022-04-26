@@ -121,7 +121,6 @@ function Modal({ modalShow, setModalShow, attributes, currentCategory }) {
 							<Vimeo
 								video={vidUrl}
 								controls
-								autoplay
 								onLoaded={() => setVideoLoading(false)}
 								responsive={true}
 								volume={0.3}

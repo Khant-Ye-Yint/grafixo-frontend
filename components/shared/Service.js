@@ -57,6 +57,7 @@ const Service = ({ reverse, img, title, para, bgClass }) => {
 								layout='fill'
 								objectFit='contain'
 								objectPosition={`${reverse ? 'left' : 'right'}`}
+								priority={true}
 							/>
 						</div>
 					)
