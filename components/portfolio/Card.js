@@ -1,19 +1,9 @@
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
-import useScrollControl from '../../hooks/useScrollControl';
+import { useState } from 'react';
 import Media from 'react-media';
 
-import Modal from './Modal';
-
-const Card = ({ attributes, currentCategory }) => {
+const Card = ({ attributes, openModel }) => {
 	const [hover, setHover] = useState(false);
-	const [modalShow, setModalShow] = useState(false);
-
-	const { allowScroll, preventScroll } = useScrollControl();
-
-	useEffect(() => {
-		modalShow ? preventScroll() : allowScroll();
-	}, [modalShow]);
 
 	return (
 		<Media
@@ -24,12 +14,11 @@ const Card = ({ attributes, currentCategory }) => {
 			}}
 		>
 			{(matches) => (
-				<div>
+				<div onClick={() => openModel(attributes)}>
 					<div
 						className='w-full laptop:h-96 tablet:h-72 phone:h-48 cursor-pointer relative flex justify-center items-center'
 						onMouseEnter={() => setHover(true)}
 						onMouseLeave={() => setHover(false)}
-						onClick={() => setModalShow(true)}
 					>
 						<div
 							className={`w-full h-full z-20 text-white flex flex-col justify-center items-center space-y-5 ${
@@ -62,13 +51,6 @@ const Card = ({ attributes, currentCategory }) => {
 							priority
 						/>
 					</div>
-					<Modal
-						modalShow={modalShow}
-						onClose={() => setModalShow(false)}
-						setModalShow={setModalShow}
-						attributes={attributes}
-						currentCategory={currentCategory}
-					/>
 				</div>
 			)}
 		</Media>

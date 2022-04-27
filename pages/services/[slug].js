@@ -1,7 +1,6 @@
 import { useRouter } from 'next/router';
 
 import Layout from '../../components/shared/Layout';
-import CardList from '../../components/portfolio/CardList';
 
 const ServicePage = () => {
 	const router = useRouter();
@@ -15,10 +14,8 @@ const ServicePage = () => {
 						<h1 className='text-white laptop:text-5xl phone:text-2xl tablet:text-3xl font-bree z-10'>
 							{slug}
 						</h1>
-						{/* <div className='absolute w-full h-full backdrop-filter backdrop-blur-sm'></div> */}
 					</div>
 				</div>
-				<CardList />
 			</div>
 		</Layout>
 	);
