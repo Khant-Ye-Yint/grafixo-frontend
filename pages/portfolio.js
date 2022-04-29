@@ -64,7 +64,7 @@ const portfolio = ({ data }) => {
 	);
 };
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 	const client = createClient({
 		space: process.env.CONTENTFUL_SPACE,
 		accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
@@ -77,7 +77,7 @@ export async function getServerSideProps() {
 		limit: 8,
 	});
 
-	return { props: { data: res.items } };
+	return { props: { data: res.items }, revalidate: 60 };
 
 	// Fetch data from external API
 
