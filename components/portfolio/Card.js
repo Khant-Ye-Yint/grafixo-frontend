@@ -24,9 +24,9 @@ const Card = ({ attributes, openModel }) => {
 					>
 						<div
 							className={`w-full h-full z-20 text-white flex flex-col justify-center items-center space-y-5 ${
-								(matches.small || matches.medium) && 'bg-black bg-opacity-40'
+								(matches.small || matches.medium) && 'bg-black bg-opacity-50'
 							} ${
-								matches.large && 'bg-none hover:bg-black  hover:bg-opacity-40'
+								matches.large && 'bg-none hover:bg-black  hover:bg-opacity-50'
 							} transition ease-in-out duration-500 opacity-100 bg-opacity-40`}
 						>
 							<h1
@@ -39,7 +39,9 @@ const Card = ({ attributes, openModel }) => {
 								{attributes.name}
 							</h1>
 
-							<div className='absolute bottom-3 right-3 flex flex-row justify-end items-center space-x-3 flex-wrap '>
+							<div
+								className={`absolute bottom-3 right-3 flex flex-row justify-end items-center space-x-3 flex-wrap `}
+							>
 								{attributes.category.map((cat) => (
 									<Badge>
 										{cat === 'promoAni' ? 'promotional animation' : cat}
@@ -54,9 +56,7 @@ const Card = ({ attributes, openModel }) => {
 							objectPosition='center'
 							objectFit='cover'
 							className={`${
-								hover &&
-								matches.large &&
-								'scale-125 filter blur-sm transition duration-500'
+								hover && matches.large && 'scale-125  transition duration-500'
 							} transition duration-500 `}
 							priority
 						/>

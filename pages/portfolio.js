@@ -22,9 +22,10 @@ const portfolio = ({ data }) => {
 
 	const List = ({ text, category }) => (
 		<li
-			className={`cursor-pointer text-center hover:text-white hover:border-2  font-bold px-1 py-2 ${
-				category === currentCategory &&
-				'text-primary border-primary border-2 hover:text-primary'
+			className={`cursor-pointer text-center hover:text-white hover:border-2 hover:border-white border-2  font-bold px-1 py-2 ${
+				category === currentCategory
+					? 'text-primary border-primary border-2 hover:text-primary'
+					: 'border-transparent'
 			}`}
 			onClick={() => setCurrentCategory(category)}
 			style={{
