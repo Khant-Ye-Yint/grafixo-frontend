@@ -2,6 +2,8 @@ import Image from 'next/image';
 import { useState } from 'react';
 import Media from 'react-media';
 
+import Badge from './Badge';
+
 const Card = ({ attributes, openModel }) => {
 	const [hover, setHover] = useState(false);
 
@@ -29,13 +31,21 @@ const Card = ({ attributes, openModel }) => {
 						>
 							<h1
 								className={`text-white text-center font-montserrat font-bold laptop:text-2xl tablet:text-2xl phone:text-lg p-5 ${
-									matches.large && !hover && 'opacity-0'
+									!hover && 'opacity-0'
 								} ${
-									matches.large && hover && 'opacity-100'
+									hover && 'opacity-100'
 								} transition ease-in-out duration-700 `}
 							>
 								{attributes.name}
 							</h1>
+
+							<div className='absolute bottom-3 right-3 flex flex-row justify-end items-center space-x-3 flex-wrap '>
+								{attributes.category.map((cat) => (
+									<Badge>
+										{cat === 'promoAni' ? 'promotional animation' : cat}
+									</Badge>
+								))}
+							</div>
 						</div>
 						<Image
 							src={attributes.thumbnailUrl}

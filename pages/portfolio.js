@@ -68,13 +68,11 @@ export async function getStaticProps() {
 	const client = createClient({
 		space: process.env.CONTENTFUL_SPACE,
 		accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-		ssrMode: true,
 	});
 
 	const res = await client.getEntries({
 		content_type: 'portfolio',
 		order: '-fields.date',
-		limit: 8,
 	});
 
 	return { props: { data: res.items }, revalidate: 60 };

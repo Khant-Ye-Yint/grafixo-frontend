@@ -178,7 +178,9 @@ function Modal({ modalShow, setModalShow, attributes, currentCategory }) {
 					</p>
 					<div className='mt-3 flex flex-row flex-wrap space-x-3'>
 						{category.map((cat) => (
-							<Badge>{cat}</Badge>
+							<Badge>
+								{cat === 'promoAni' ? 'promotional animation' : cat}
+							</Badge>
 						))}
 					</div>
 				</div>
