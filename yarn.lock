@@ -42,6 +42,11 @@
   resolved "https://registry.npmjs.org/@emotion/memoize/-/memoize-0.7.4.tgz"
   integrity sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw==
 
+"@fontsource/dosis@^4.5.8":
+  version "4.5.8"
+  resolved "https://registry.yarnpkg.com/@fontsource/dosis/-/dosis-4.5.8.tgz#d6c78fcd2e9df179efb09d96563868bb5ef4dfd9"
+  integrity sha512-dv9Mw3dMzVPTADMIo49y/b7S7W5LTGYOIeN+Ciht1PLX1+kKPUNwiapc3uU8DIQZrOGiuNo8ktUPtkTBjYoeNQ==
+
 "@headlessui/react@^1.4.2":
   version "1.4.2"
   resolved "https://registry.npmjs.org/@headlessui/react/-/react-1.4.2.tgz"

@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 .navLink {
-	@apply cursor-pointer font-montserrat text-normal text-lightGray hover:text-white font-bold inline-block;
+	@apply cursor-pointer font-montserrat text-lg text-lightGray hover:text-white font-bold inline-block;
 	text-decoration: none;
+	text-shadow: 2px 3px 2px #3d3d3d;
 }
 
 .navLink::after {

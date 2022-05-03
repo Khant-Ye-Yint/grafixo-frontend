@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -39,7 +40,9 @@ const Service = ({ reverse, img, title, para, bgClass }) => {
 					<p className='laptop:text-normal desktop:text-medium font-montserrat text-white w-2/3 phone:w-full'>
 						{para}
 					</p>
-					<Button text='Learn more' />
+					<Link href='/portfolio'>
+						<Button text='Learn more' />
+					</Link>
 				</motion.div>
 			</div>
 			<Media

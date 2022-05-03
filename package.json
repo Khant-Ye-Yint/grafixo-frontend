@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@fontsource/dosis": "^4.5.8",
     "@headlessui/react": "^1.4.2",
     "@heroicons/react": "^1.0.5",
     "@u-wave/react-vimeo": "^0.9.5",

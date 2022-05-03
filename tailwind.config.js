@@ -7,6 +7,7 @@ module.exports = {
 			fontFamily: {
 				montserrat: ['montserrat'],
 				bree: ['Bree Serif'],
+				dosis: ['Dosis'],
 			},
 			fontSize: {
 				largest: '3.75rem',

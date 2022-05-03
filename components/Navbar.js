@@ -70,18 +70,18 @@ const Navbar = () => {
 				initial='hidden'
 				animate={show ? 'show' : 'hidden'}
 			>
-				<li>
+				{/* <li>
 					<NavDropdown />
-				</li>
+				</li> */}
 				<Link href='/portfolio'>
 					<li className='navLink'>Portfolio</li>
 				</Link>
-				<Link href='/about'>
+				{/* <Link href='/about'>
 					<li className='navLink'>About us</li>
 				</Link>
 				<Link href='/contact'>
 					<li className='navLink'>Contact us</li>
-				</Link>
+				</Link> */}
 				<XIcon
 					width={25}
 					height={25}
@@ -94,20 +94,20 @@ const Navbar = () => {
 	);
 
 	const navBar = (
-		<ul className='flex laptop:flex-row tablet:flex-row justify-between items-center z-50 w-1/2 laptop:w-1/2 tablet:w-3/5 list-none'>
-			<li>
+		<ul className='flex laptop:flex-row tablet:flex-row justify-end space-x-28 items-center z-50 w-1/2 laptop:w-1/2 tablet:w-3/5 list-none'>
+			{/* <li>
 				{' '}
 				<NavDropdown />{' '}
-			</li>
+			</li> */}
 			<Link href='/portfolio'>
 				<li className='navLink'>Portfolio</li>
 			</Link>
-			<Link href='/about'>
+			{/* <Link href='/about'>
 				<li className='navLink'>About us</li>
 			</Link>
 			<Link href='/contact'>
 				<li className='navLink'>Contact us</li>
-			</Link>
+			</Link> */}
 			{/* {isAuth && <LogoutButton text='Logout' />} */}
 		</ul>
 	);
@@ -118,16 +118,19 @@ const Navbar = () => {
 				showBg ? 'bg-black' : 'bg-transparent'
 			}  bg-opacity-70 tablet:px-tabletContain laptop:px-contain phone:px-5 flex flex-row justify-between items-center fixed tablet:fixed top-0 z-40 transition duration-1000 ease-in-out`}
 		>
-			<div className='cursor-pointer relative h-12 w-1/4 phone:w-2/5 '>
-				<Link href='/'>
-					<Image
+			<div className=' relative h-12 w-1/4 phone:w-2/5 '>
+				<h1 className='text-4xl font-dosis text-white select-none font-extrabold text-shadow'>
+					<Link href='/'>
+						{/* <Image
 						priority
 						src={Logo}
 						layout='fill'
 						objectFit='contain'
 						objectPosition='left'
-					/>
-				</Link>
+					/> */}
+						Zin Ko Htut
+					</Link>
+				</h1>
 			</div>
 			<Media
 				queries={{

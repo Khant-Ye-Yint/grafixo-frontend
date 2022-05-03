@@ -17,29 +17,32 @@ const Footer = () => {
 				<div className='flex flex-col space-y-2'>
 					<Link href='/'>
 						<div className='h-10 w-full relative cursor-pointer'>
-							<Image
+							{/* <Image
 								src={Logo}
 								layout='fill'
 								objectFit='contain'
 								objectPosition='left'
-							/>
+							/> */}
+							<h1 className='text-4xl font-dosis text-primary select-none font-extrabold text-shadow'>
+								Zin Ko Htut
+							</h1>
 						</div>
 					</Link>
 					<span>+959 765 203 468</span>
-					<span>grafixostudio@gmail.com</span>
+					<span>zinkoko.5a4b48@gmail.com</span>
 				</div>
 				<div className='flex flex-col space-y-2'>
 					<h1 className='text-primary text-medium font-bold'>LINKS</h1>
-					<FooterLink text='3D Modeling ' link='' />
-					<FooterLink text='3D Rendering' link='' />
-					<FooterLink text='3D Product Animation' link='' />
-					<FooterLink text='3D/2D Promotional Animation' link='' />
+					<FooterLink text='3D Modeling ' link='/portfolio' />
+					<FooterLink text='3D Rendering' link='/portfolio' />
+					<FooterLink text='3D Product Animation' link='/portfolio' />
+					<FooterLink text='3D/2D Promotional Animation' link='/portfolio' />
 				</div>
-				<div className='flex flex-col space-y-2'>
+				{/* <div className='flex flex-col space-y-2'>
 					<h1 className='text-primary text-medium font-bold'>INFO</h1>
 					<FooterLink text='About Us' link='' />
 					<FooterLink text='Contact Us' link='' />
-				</div>
+				</div> */}
 			</div>
 			<div className='w-full h-20  mt-28 phone:mt-10 flex flex-row justify-between items-center border-t border-gray-500'>
 				<span className='text-small'>Copyright © 2022</span>

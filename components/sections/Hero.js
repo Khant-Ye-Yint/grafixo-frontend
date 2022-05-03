@@ -11,10 +11,12 @@ const Hero = () => {
 	};
 
 	return (
-		<div className='h-vh100 flex flex-row justify-between items-center laptop:p-contain tablet:px-tabletContain phone:px-phone relative'>
+		<div
+			className={`h-vh100 flex flex-row justify-between items-center laptop:p-contain tablet:px-tabletContain phone:px-phone relative`}
+		>
 			<div className=' flex flex-col items-start space-y-5 z-10'>
 				<h1 className='text-white font-bree laptop:text-larger desktop:text-largest phone:text-phoneMedium'>
-					We Make 3D{' '}
+					I Make 3D{' '}
 					<TextLoop
 						children={['Animation', 'Modeling', 'Rendering']}
 						className='text-primary font-bold break-words text-shadow'
@@ -24,7 +26,9 @@ const Hero = () => {
 				<p className=' text-white text-medium font-montserrat'>
 					Turn your vision into life with 3D
 				</p>
-				<Button text='Get in touch' />
+				<a href='mailto:zinkoko.5a4b48@gmail.com'>
+					<Button text='Get in touch' />
+				</a>
 			</div>
 			<video
 				autoPlay
