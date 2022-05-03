@@ -119,7 +119,7 @@ const Navbar = () => {
 			}  bg-opacity-70 tablet:px-tabletContain laptop:px-contain phone:px-5 flex flex-row justify-between items-center fixed tablet:fixed top-0 z-40 transition duration-1000 ease-in-out`}
 		>
 			<div className=' relative h-12 w-1/4 phone:w-2/5 '>
-				<h1 className='text-4xl font-dosis text-white select-none font-extrabold text-shadow'>
+				<h1 className='text-4xl font-dosis text-white select-none font-extrabold text-shadow whitespace-nowrap'>
 					<Link href='/'>
 						{/* <Image
 						priority
