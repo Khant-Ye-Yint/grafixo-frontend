@@ -58,6 +58,7 @@ const Card = ({ attributes, openModel }) => {
 							className={`${
 								hover && matches.large && 'scale-125  transition duration-500'
 							} transition duration-500 `}
+							placeholder='blur'
 							priority
 						/>
 					</div>
